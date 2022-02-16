@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<nav class="navbar bg-dark navbar-dark navbar-expand-lg">
+    <a class="navbar-brand" href="#">Logo</a>
+    <div class="navbar-nav w-100 ml-auto" th:each="menu : ${menus}">
+        <a class="nav-link" th:href="${menu.url}" th:text="${menu.label}"></a>
+    </div>
+</nav>
+</html>
