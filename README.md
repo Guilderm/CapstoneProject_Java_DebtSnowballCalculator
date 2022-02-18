@@ -4,12 +4,15 @@
 ### ¡IMPORTANTE!
 <p>El contenido de éste documento puede ser modificado durante el desarrollo del proyecto</p>
 
-Propósito:
+#### Propósito:
 <p>Implementar las competencias adquiridas a lo largo del curso para desarrollar una aplicación web final que sea transaccional y efectiva.</p> 
 
-Descripción:
+#### Descripción:
 <p>El proyecto se basa en la creación de un sitio web para la empresa financiera ficticia "Snowball Finance". El sitio permitirá a los usuarios crear una cuenta e iniciar
-sesión. El usuario podrá acceder al contenido, como información financiera, tips o consejos para administración de deudas, y suscripciones de compra.</p>
+sesión. El usuario podrá acceder al contenido, como información financiera, tips y consejos para administración financiera, y suscripciones de compra.</p>
+
+#### SnowBall Finance:
+<p>Snowball Finance es una empresa financiera que ofrece sus servicios tanto a empresas como a particulares cuya actividad principal consiste en la asesoría para administración y cancelación de deuda, basada en la metodología “Deuda Bola de Nieve”. También se brinda emisión de créditos, préstamos y facilidades de financiamiento a corto, mediano y largo plazo para que el adquisidor pueda hacer frente a sus deudas, mejorar su bienestar, solventar un gastro imprevisto, adquirir recursos o emprender algún proyecto de inversión, entre otros con tasas de interés muy competitivas.</p>
 
 ### Requerimientos: 
 <ul>
