@@ -31,5 +31,3 @@ Apache Netbeans<br>
 MySQL Workbech<br>
 Java + CSS+ SpringBoot<br>
 Clouding Computing Heruko<br>
-
-Prueba de archivo agregando mas pruevas

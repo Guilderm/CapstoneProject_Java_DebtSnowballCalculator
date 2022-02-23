@@ -19,4 +19,9 @@ public class Public {
     public String aboutPage() {
         return "public/about";
     }
+
+    @GetMapping("/calculator")
+    public String calculator() {
+        return "public/calculator";
+    }
 }
