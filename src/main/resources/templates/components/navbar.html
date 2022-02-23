@@ -1,131 +1,39 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<body data-smooth-scroll-offset="77">
-
+<body>
 <nav class="nav-container" th:fragment="navbar">
-    <div>
-        <div class="bar bar--sm visible-xs">
-            <div class="container">
-                <div class="row">
-                    <div class="col-3 col-md-2">
-                        <a href="index.html"> <img alt="logo" class="logo logo-dark" src="img/logo-dark.png"> <img
-                                alt="logo" class="logo logo-light" src="img/logo-light.png"> </a>
-                    </div>
-                    <div class="col-9 col-md-10 text-right">
-                        <a class="hamburger-toggle" data-toggle-class="#menu1;hidden-xs hidden-sm" href="#"> <i
-                                class="icon icon--sm stack-interface stack-menu"></i> </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <nav class="bar bar-1 hidden-xs" id="menu1">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-1 col-md-2 hidden-xs">
-                        <div class="bar__module">
-                            <a href="index.html"> <img alt="logo" class="logo logo-dark" src="img/logo-dark.png"> <img
-                                    alt="logo" class="logo logo-light" src="img/logo-light.png"> </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-11 col-md-12 text-right text-left-xs text-left-sm">
-                        <div class="bar__module">
-                            <ul class="menu-horizontal text-left">
-                                <li><a href="#">
-                                    Single Link
-                                </a></li>
-                                <li class="dropdown"> <span class="dropdown__trigger">
-                                        Dropdown Slim
-                                    </span>
-                                    <div class="dropdown__container">
-                                        <div class="container">
-                                            <div class="row">
-                                                <div class="dropdown__content col-lg-2">
-                                                    <ul class="menu-vertical">
-                                                        <li><a href="#">Single Link</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="dropdown"> <span class="dropdown__trigger">
-                                        Dropdown Wide
-                                    </span>
-                                    <div class="dropdown__container">
-                                        <div class="container">
-                                            <div class="row">
-                                                <div class="dropdown__content row w-100">
-                                                    <div class="col-lg-3">
-                                                        <h5>Menu Title</h5>
-                                                        <ul class="menu-vertical">
-                                                            <li><a href="#">Single Link</a></li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="col-lg-3">
-                                                        <h5>Menu Title</h5>
-                                                        <ul class="menu-vertical">
-                                                            <li><a href="#">Single Link</a></li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="col-lg-3">
-                                                        <h5>Menu Title</h5>
-                                                        <ul class="menu-vertical">
-                                                            <li><a href="#">Single Link</a></li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="col-lg-3">
-                                                        <h5>Menu Title</h5>
-                                                        <ul class="menu-vertical">
-                                                            <li><a href="#">Single Link</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
+    <!--====== NAVBAR START ======-->
+    <section class="navbar-area navbar-two">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <nav class="navbar navbar-expand-lg">
+                        <a class="navbar-brand" th:href="@{/}"> <img alt="Logo"
+                                                                     src="https://cdn.ayroui.com/1.0/images/logo.svg"/>
+                        </a>
+                        <div class="collapse navbar-collapse sub-menu-bar" id="navbarTwo">
+                            <ul class="navbar-nav m-auto">
+                                <li class="nav-item"><a th:href="@{/}">Home</a></li>
+                                <li class="nav-item"><a th:href="@{/about}">About</a></li>
+                                <li class="nav-item"><a th:href="@{/pricing}">Pricing</a></li>
+                                <li class="nav-item"><a th:href="@{/calculator}">Calculator</a></li>
                             </ul>
                         </div>
-                        <div class="bar__module">
-                            <a class="btn btn--sm type--uppercase" href="#customise-template"> <span class="btn__text">
-                                    Try Builder
-                                </span> </a>
-                            <a class="btn btn--sm btn--primary type--uppercase" href="#purchase-template"> <span
-                                    class="btn__text">
-                                    Buy Now
-                                </span> </a>
+                        <div class="navbar-btn d-none d-sm-inline-block">
+                            <ul>
+                                <li><a class="btn primary-btn square" th:href="@{/}"> Sign In </a></li>
+                                <li><a class="btn primary-btn-outline square" th:href="@{/}"> Sign Up </a></li>
+                            </ul>
                         </div>
-                    </div>
+                    </nav>
+                    <!-- navbar -->
                 </div>
             </div>
-        </nav>
-    </div>
-    </div>
-
-
-    <!---
-        <a class="navbar-brand" th:href="@{/}">Business Name</a>
-        <button aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"
-                data-target="#navbar"
-                data-toggle="collapse" type="button">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbar">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" th:href="@{/}">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" th:href="@{/pricing}">Pricing</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" th:href="@{/about}">About Us</a>
-                </li>
-            </ul>
+            <!-- row -->
         </div>
-    </nav>
-    -->
-
+        <!-- container -->
+    </section>
+    <!--====== NAVBAR ENDS ======-->
+</nav>
 </body>
 </html>

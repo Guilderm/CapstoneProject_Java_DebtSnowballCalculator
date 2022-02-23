@@ -9,20 +9,15 @@
     <link rel="stylesheet" th:href="@{CSS/global.css}">
 
     <!-- Bootstrap CSS -->
-    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-          rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <link href="https://fonts.gstatic.com" rel="preconnect">
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=DM+Serif+Text&display=swap"
-          rel="stylesheet">
-    et">
+    <!--====== Lineicons CSS ======-->
+    <link href="https://cdn.lineicons.com/3.0/lineicons.css" rel="stylesheet">
 
-    <!-- Customize CSS -->
-    <link href="css/stack-interface.css" media="all" rel="stylesheet" type="text/css">
-    <link href="css/stack-interface.css" media="all" rel="stylesheet" type="text/css"/>
-    <link href="css/theme.css" media="all" rel="stylesheet" type="text/css"/>
-    <link href="css/custom.css" media="all" rel="stylesheet" type="text/css"/>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:200,300,400,400i,500,600,700" rel="stylesheet">
+    <!--====== Style css ======-->
+    <link href="https://cdn.ayroui.com/1.0/css/starter.css" rel="stylesheet"/>
+
+    <!--====== Customize CSS ======-->
 
     <title layout:title-pattern="$CONTENT_TITLE | $LAYOUT_TITLE">Snowball Finance</title>
 </head>
@@ -40,9 +35,8 @@
 <div th:insert="components/footer :: footer"></div>
 
 <th:block layout:fragment="optional"/>
-<!-- Bootstrap Bundle with Popper -->
-<script crossorigin="anonymous"
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 
+<!-- Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
