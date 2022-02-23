@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" th:href="@{images/Fidelitas_Favicon.png}" type="image/jpg"/>
+    <link rel="stylesheet" th:href="@{CSS/global.css}">
+
+    <!-- Bootstrap CSS -->
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <title layout:title-pattern="$CONTENT_TITLE | $LAYOUT_TITLE">Snowball Finance</title>
+</head>
+<body>
+
+<!-- Navbar/Header -->
+<div th:insert="components/navbar::navbar"></div>
+
+<!-- Changing contents -->
+<div layout:fragment="content">
+    <p>This will be replaced by the Body contents</p>
+</div>
+
+<!-- Navbar/Header -->
+<div th:insert="components/footer :: footer"></div>
+
+<th:block layout:fragment="optional"/>
+<!-- Bootstrap Bundle with Popper -->
+<script crossorigin="anonymous"
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
