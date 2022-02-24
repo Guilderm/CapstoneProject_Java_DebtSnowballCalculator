@@ -14,8 +14,9 @@
     <!--====== Lineicons CSS ======-->
     <link href="https://cdn.lineicons.com/3.0/lineicons.css" rel="stylesheet">
 
-    <!--====== Style css ======-->
+    <!--====== Style css
     <link href="https://cdn.ayroui.com/1.0/css/starter.css" rel="stylesheet"/>
+    ======-->
 
     <!--====== Customize CSS ======-->
 
@@ -24,7 +25,7 @@
 <body>
 
 <!-- Navbar/Header -->
-<div th:insert="components/navbar::navbar"></div>
+<div th:insert="globalComponents/navbar::navbar"></div>
 
 <!-- Changing contents -->
 <div layout:fragment="content">
@@ -32,7 +33,7 @@
 </div>
 
 <!-- Navbar/Header -->
-<div th:insert="components/footer :: footer"></div>
+<div th:insert="globalComponents/footer :: footer"></div>
 
 <th:block layout:fragment="optional"/>
 

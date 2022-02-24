@@ -1,13 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="icon" src="../static/images/Fidelitas_Favicon.png" type="image/x-icon">
-    <title>About | Snowball</title>
-</head>
+<html lang="en" layout:decorate="~{globalComponents/layout}"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head><title>About</title></head>
 <body>
-<div style="text-align:center">
-    <img alt="Logo U Fidélitas" src="../static/images/FidelitasLogo.png">
+
+<div layout:fragment="content">
+    <img alt="Logo U Fidélitas" src="/images/FidelitasLogo.png">
     <h1>Capstone Project</h1>
     <br>
     <p>This project contains the fallow along code for this class.</p>
@@ -20,5 +18,6 @@
         <br>Guilder W. Milliner
     </p>
 </div>
+
 </body>
 </html>
