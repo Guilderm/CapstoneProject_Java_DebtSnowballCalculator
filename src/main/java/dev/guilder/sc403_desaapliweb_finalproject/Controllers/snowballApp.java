@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class snowballApp {
 
     @GetMapping("/calculator")
-    public String calculator() {
-        return "snowballApp/calculator";
+    public String snowballCalculator() {
+        return "snowballApp/snowballCalculator";
     }
 }
