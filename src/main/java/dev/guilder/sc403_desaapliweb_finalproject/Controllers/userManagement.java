@@ -5,8 +5,18 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class userManagement {
-    @GetMapping("/calculatore")
-    public String calculator() {
-        return "snowballApp/calculator";
+    @GetMapping("/login")
+    public String login() {
+        return "userManagement/login";
+    }
+
+    @GetMapping("/profile")
+    public String profile() {
+        return "userManagement/profile";
+    }
+
+    @GetMapping("/userSignUp")
+    public String userSignUp() {
+        return "userManagement/userSignUp";
     }
 }

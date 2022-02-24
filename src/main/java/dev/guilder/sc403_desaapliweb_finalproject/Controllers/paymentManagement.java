@@ -5,8 +5,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class paymentManagement {
-    @GetMapping("/calculatorlq")
-    public String calculator() {
-        return "snowballApp/calculator";
+    @GetMapping("/Checkout")
+    public String checkoutPage() {
+        return "paymentManagement/checkoutPage";
     }
 }

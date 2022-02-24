@@ -5,8 +5,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class siteManagement {
-    @GetMapping("/calculatorw")
-    public String calculator() {
-        return "snowballApp/calculator";
+    @GetMapping("/adminDashboard")
+    public String adminDashboard() {
+        return "siteManagement/adminDashboard";
     }
 }
