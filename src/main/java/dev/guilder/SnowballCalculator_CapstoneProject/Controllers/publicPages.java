@@ -7,16 +7,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class publicPages {
     @GetMapping("/")
     public String HomePage() {
-        return "publicPages/home";
+        return "publicPages/homePage";
     }
 
     @GetMapping("/pricing")
     public String contactPage() {
-        return "publicPages/pricing";
+        return "publicPages/pricingPage";
     }
 
     @GetMapping("/about")
     public String aboutPage() {
-        return "publicPages/about";
+        return "publicPages/aboutPage";
     }
 }
