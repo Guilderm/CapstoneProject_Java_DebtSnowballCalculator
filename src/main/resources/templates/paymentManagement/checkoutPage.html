@@ -1,11 +1,351 @@
 <!DOCTYPE html>
 <html lang="en" layout:decorate="~{globalComponents/layout}"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
-<head><title>Checkout</title></head>
+<head>
+    <link rel="stylesheet" th:href="@{CSS/checkoutPage.css}">
+    <title>Checkout</title></head>
 <body>
 
 <div layout:fragment="content">
-    <h1>Checkout</h1>
+
+    <!--====== CHECKOUT PART START ======-->
+    <section class="checkout-area">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="section-title text-center">
+                        <h3 class="title">Checkout</h3>
+                    </div>
+                    <!-- row -->
+                </div>
+            </div>
+            <!-- row -->
+            <form action="#">
+                <div class="row">
+                    <div class="col-lg-4 order-lg-last">
+                        <div class="checkout-cart">
+                            <div class="checkout-title">
+                                <h5 class="title">Your Cart</h5>
+                            </div>
+                            <!-- checkout title -->
+                            <div class="checkout-cart-product">
+                                <ul>
+                                    <li>
+                                        <div class="single-product d-flex justify-content-between">
+                                            <div class="product-name">
+                                                <h5 class="product">AyroUI Standard</h5>
+                                                <p>Standard License</p>
+                                            </div>
+                                            <div class="product-price">
+                                                <span>$69</span>
+                                            </div>
+                                        </div>
+                                        <!-- single-product -->
+                                    </li>
+                                    <li>
+                                        <div class="single-product d-flex justify-content-between">
+                                            <div class="product-name">
+                                                <h5 class="product">UIdeck All-Access Pass</h5>
+                                                <p></p>
+                                            </div>
+                                            <div class="product-price">
+                                                <span>$99</span>
+                                            </div>
+                                        </div>
+                                        <!-- single-product -->
+                                    </li>
+                                    <li>
+                                        <div class="single-product promo d-flex justify-content-between">
+                                            <div class="product-name">
+                                                <h5 class="product">Promo Code</h5>
+                                                <p>EarlyAyro</p>
+                                            </div>
+                                            <div class="product-price">
+                                                <span>-40%</span>
+                                            </div>
+                                        </div>
+                                        <!-- single-product -->
+                                    </li>
+                                    <li>
+                                        <div class="single-product d-flex justify-content-between">
+                                            <div class="product-name">
+                                                <h5 class="product">Total (USD)</h5>
+                                            </div>
+                                            <div class="product-price">
+                                                <span>$67.2</span>
+                                            </div>
+                                        </div>
+                                        <!-- single-product -->
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- checkout cart product -->
+                            <div class="checkout-promo-code form-style-two light-rounded-buttons">
+                                <div class="promo-code form-input">
+                                    <div class="input-items default">
+                                        <input placeholder="Promo" type="text"/>
+                                    </div>
+                                    <button class="btn primary-btn">Apply</button>
+                                </div>
+                            </div>
+                            <!-- checkout promo code -->
+                        </div>
+                        <!-- checkout cart -->
+                    </div>
+                    <div class="col-lg-8 order-lg-first">
+                        <div class="checkout-form form-style-two">
+                            <div class="checkout-title">
+                                <h5 class="title">Billing Address</h5>
+                            </div>
+                            <!-- checkout title -->
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="single-checkout-form form-input">
+                                        <label>For Personalized Experience</label>
+                                        <div class="input-items default">
+                                            <input placeholder="First Name" type="text"/>
+                                        </div>
+                                    </div>
+                                    <!-- single checkout form -->
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="single-checkout-form form-input">
+                                        <label>For Personalized Experience</label>
+                                        <div class="input-items default">
+                                            <input placeholder="Last Name" type="text"/>
+                                        </div>
+                                    </div>
+                                    <!-- single checkout form -->
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="single-checkout-form form-input">
+                                        <label>User Name</label>
+                                        <div class="input-items default">
+                                            <input placeholder="User Name" type="text"/>
+                                        </div>
+                                    </div>
+                                    <!-- single checkout form -->
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="single-checkout-form form-input">
+                                        <label>Email</label>
+                                        <div class="input-items default">
+                                            <input placeholder="Email" type="text"/>
+                                        </div>
+                                    </div>
+                                    <!-- single checkout form -->
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="single-checkout-form form-input">
+                                        <label>Address <span>(Optional)</span></label>
+                                        <div class="input-items default">
+                                            <input placeholder="Address" type="text"/>
+                                        </div>
+                                    </div>
+                                    <!-- single checkout form -->
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="single-checkout-form form-input">
+                                        <label>Address 2 <span>(Optional)</span></label>
+                                        <div class="input-items default">
+                                            <input placeholder="Address 2 (Optional)" type="text"/>
+                                        </div>
+                                    </div>
+                                    <!-- single checkout form -->
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="single-checkout-form form-input">
+                                        <label>Country</label>
+                                        <div class="input-items default select-input-arrow">
+                                            <select>
+                                                <option value="0">United States</option>
+                                                <option value="2">United Kingdom</option>
+                                                <option value="3">Canada</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <!-- single checkout form -->
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="single-checkout-form form-input">
+                                        <label>State</label>
+                                        <div class="input-items default select-input-arrow">
+                                            <select>
+                                                <option value="0">New York</option>
+                                                <option value="1">Missouri</option>
+                                                <option value="2">Arkansas</option>
+                                                <option value="3">California</option>
+                                                <option value="4">Delaware</option>
+                                                <option value="5">Montana</option>
+                                                <option value="6">Louisiana</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <!-- single checkout form -->
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="single-checkout-form form-input">
+                                        <label>Zip</label>
+                                        <div class="input-items default">
+                                            <input placeholder="zip" type="text"/>
+                                        </div>
+                                    </div>
+                                    <!-- single checkout form -->
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="checkout-checkbox">
+                                        <ul class="checkbox_common">
+                                            <li>
+                                                <input checked="" id="checkbox1" type="checkbox"/>
+                                                <label for="checkbox1"><span></span>Set shipping address same as billing
+                                                    address</label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <!-- single checkout form -->
+                                </div>
+                            </div>
+                            <!-- row -->
+                        </div>
+                        <!-- checkout form -->
+                        <div class="checkout-payment">
+                            <div class="checkout-title">
+                                <h5 class="title">Select A Payment Method</h5>
+                            </div>
+                            <!-- checkout title -->
+                            <div class="single-checkout-pro form-style-two">
+                                <div class="checkout-radio">
+                                    <div class="pay-top sin-payment">
+                                        <input checked="checked" id="radio1" name="radios" type="radio" value="cheque"/>
+                                        <label for="radio1"> <span></span>Credit Card</label>
+                                        <div class="payment-box payment-box-1 payment_method_bacs">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="single-checkout-form form-input">
+                                                        <label>Name on card</label>
+                                                        <div class="input-items default">
+                                                            <input placeholder="Name on card" type="text"/>
+                                                        </div>
+                                                    </div>
+                                                    <!-- single checkout form -->
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="single-checkout-form form-input">
+                                                        <label>Credit card number</label>
+                                                        <div class="input-items default">
+                                                            <input placeholder="Credit card number" type="text"/>
+                                                        </div>
+                                                    </div>
+                                                    <!-- single checkout form -->
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="single-checkout-form form-input">
+                                                        <label>Expiration</label>
+                                                        <div class="input-items default">
+                                                            <input placeholder="Expiration" type="text"/>
+                                                        </div>
+                                                    </div>
+                                                    <!-- single checkout form -->
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="single-checkout-form form-input">
+                                                        <label>CVC</label>
+                                                        <div class="input-items default">
+                                                            <input placeholder="CVC" type="text"/>
+                                                        </div>
+                                                    </div>
+                                                    <!-- single checkout form -->
+                                                </div>
+                                            </div>
+                                            <!-- row -->
+                                        </div>
+                                    </div>
+                                    <!-- pay top -->
+                                    <div class="pay-top sin-payment">
+                                        <input id="radio2" name="radios" type="radio" value="cheque"/>
+                                        <label for="radio2"> <span></span>Debit Card</label>
+                                        <div class="payment-box payment-box-2 payment_method_bacs">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="single-checkout-form form-input">
+                                                        <label>Name on card</label>
+                                                        <div class="input-items default">
+                                                            <input placeholder="Name on card" type="text"/>
+                                                        </div>
+                                                    </div>
+                                                    <!-- single checkout form -->
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="single-checkout-form form-input">
+                                                        <label>Card number</label>
+                                                        <div class="input-items default">
+                                                            <input placeholder="Credit card number" type="text"/>
+                                                        </div>
+                                                    </div>
+                                                    <!-- single checkout form -->
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="single-checkout-form form-input">
+                                                        <label>Expiration</label>
+                                                        <div class="input-items default">
+                                                            <input placeholder="Expiration" type="text"/>
+                                                        </div>
+                                                    </div>
+                                                    <!-- single checkout form -->
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="single-checkout-form form-input">
+                                                        <label>CVC</label>
+                                                        <div class="input-items default">
+                                                            <input placeholder="CVC" type="text"/>
+                                                        </div>
+                                                    </div>
+                                                    <!-- single checkout form -->
+                                                </div>
+                                            </div>
+                                            <!-- row -->
+                                        </div>
+                                    </div>
+                                    <!-- pay top -->
+                                    <div class="pay-top sin-payment">
+                                        <input id="radio3" name="radios" type="radio" value="cheque"/>
+                                        <label for="radio3"> <span></span>Paypal</label>
+                                        <div class="payment-box payment-box-3 payment_method_bacs">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="single-checkout-form form-input">
+                                                        <label>Email</label>
+                                                        <div class="input-items default">
+                                                            <input placeholder="Email" type="text"/>
+                                                        </div>
+                                                    </div>
+                                                    <!-- single checkout form -->
+                                                </div>
+                                            </div>
+                                            <!-- row -->
+                                        </div>
+                                    </div>
+                                    <!-- pay top -->
+                                </div>
+                                <!-- checkout radio -->
+                            </div>
+                        </div>
+                        <!-- checkout payment -->
+                        <div class="checkout-btn light-rounded-buttons">
+                            <button class="btn primary-btn w-100" type="submit">
+                                Complete Purchase
+                            </button>
+                        </div>
+                        <!-- checkout btn -->
+                    </div>
+                </div>
+                <!-- row -->
+            </form>
+        </div>
+        <!-- container -->
+    </section>
+    <!--====== CHECKOUT PART ENDS ======-->
+
 </div>
 
 </body>
