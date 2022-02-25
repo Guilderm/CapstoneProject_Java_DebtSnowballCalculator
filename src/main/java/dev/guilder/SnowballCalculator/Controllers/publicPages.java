@@ -1,4 +1,4 @@
-package dev.guilder.SnowballCalculator_CapstoneProject.Controllers;
+package dev.guilder.SnowballCalculator.Controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

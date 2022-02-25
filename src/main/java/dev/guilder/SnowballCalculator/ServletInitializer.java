@@ -1,4 +1,4 @@
-package dev.guilder.SnowballCalculator_CapstoneProject;
+package dev.guilder.SnowballCalculator;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
@@ -7,7 +7,7 @@ public class ServletInitializer extends SpringBootServletInitializer {
 
     @Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-        return application.sources(SnowballCalculator_CapstoneProject_Application.class);
+        return application.sources(SnowballCalculator_Application.class);
     }
 
 }
