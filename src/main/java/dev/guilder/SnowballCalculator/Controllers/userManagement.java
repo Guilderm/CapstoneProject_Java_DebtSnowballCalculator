@@ -12,7 +12,7 @@ public class userManagement {
 
     @GetMapping("/profile")
     public String profileDashboard() {
-        return "userManagement/profile";
+        return "userManagement/profilePage";
     }
 
     @GetMapping("/userSignUp")
