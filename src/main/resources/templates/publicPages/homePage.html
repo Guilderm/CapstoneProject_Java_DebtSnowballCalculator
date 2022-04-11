@@ -3,8 +3,7 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
     <link rel="stylesheet" th:href="@{CSS/homePage.css}">
-    <title>Home</title>
-</head>
+    <title>Home</title></head>
 <body class="stretched">
 
 <div layout:fragment="content">
@@ -13,7 +12,7 @@
 
         <div class="overlay"></div>
         <video autoplay="autoplay" loop="loop" muted="muted" playsinline="playsinline">
-            <source src="https://storage.googleapis.com/coverr-main/mp4/Mt_Baker.mp4" type="video/mp4">
+            <source src="videos/countingMoney.mp4" type="video/mp4">
         </video>
 
         <!-- The header content -->
@@ -21,8 +20,9 @@
             <div class="d-flex h-100 text-center align-items-center">
                 <!-- TODO: Find out why it is not showing up white-->
                 <div class="w-100 text-white">
-                    <h1 class="display-3">Video Header</h1>
-                    <p class="lead mb-0">Using HTML5 Video and Bootstrap</p>
+                    <h1 class="display-3">Debt Snowball Method Works!</h1>
+                    <p class="lead mb-0">Looking to get out of debt for good? 
+                        You have come to the right place.</p>
                 </div>
             </div>
         </div>
@@ -33,25 +33,88 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 mx-auto">
-                    <p>The HTML5 video element uses an mp4 video as a source. Change the source video to add in your own
-                        background! The header text is vertically centered using flex utilities that are built into
-                        Bootstrap.</p>
-                    <p>The overlay color and opacity can be changed by modifying the <code>background-color</code> and
-                        <code>opacity</code> properties of the <code>.overlay</code> class in the CSS.</p>
-                    <p>Set the mobile fallback image in the CSS by changing the background image of the header element
-                        within the media query at the bottom of the CSS snippet.</p>
-                    <p class="mb-0">
-                    </p>
+                    <p>The fastest way to build a snowball is to pack some snow 
+                        into a tight ball and start rolling it around. As you gain 
+                        momentum and speed, your snowball grows into a snow boulder.</p>
+                    <p>So why in the world are we talking about snowballs? Because 
+                        when you use this technique to pay off your debt, you will be 
+                        debt-free in no time.</p>
+                    <h3 class="h1 fw-bold mb-3 text-center">How Does 
+                        the Method Work?</h3>
+                    <p>The debt snowball method is a debt-reduction strategy where 
+                        you pay off debt in order of smallest to largest, gaining 
+                        momentum as you knock out each remaining balance. When the 
+                        smallest debt is paid in full, you roll the minimum payment 
+                        you were making on that debt into the next-smallest debt payment.</p>
+                    <p class="text-center"><strong>Follow the steps below:</strong></p>
+                            </br>
+                    <p class="mb-0"></p>
                 </div>
             </div>
         </div>
     </section>
-
-</div>
-
-</div>
+    <section id="content">
+        <div class="content-wrap">
+            <div class="container clearfix">
+		<div class="row justify-content-center gutter-50 col-mb-50">
+                    <div class="clear"></div>
+                        <div class="col-lg-3 col-sm-6">
+                            <div class="feature-box fbox-effect flex-column">
+                                <div class="fbox-icon mb-4">
+                                    <img src="images/lista-de-deseos.png"
+                                    alt="Feature Icon" class="bg-transparent rounded-0">
+				</div>
+				<div class="fbox-content">
+				<h3>List your Debts</h3>
+                                <p>List your debts from smallest to largest regardless 
+                                    of interest rate.</p>
+                                </div>
+                            </div>
+                        </div>
+                            <div class="col-lg-3 col-sm-6">
+				<div class="feature-box fbox-effect flex-column">
+                                    <div class="fbox-icon mb-4">
+					<img src="images/money.png" 
+                                        alt="Feature Icon" class="bg-transparent rounded-0">
+                                    </div>
+                                    <div class="fbox-content">
+					<h3>Attack the Debt</h3>
+                                        <p>Attack the smallest debt and make minimum 
+                                            payments on all your debts.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-sm-6">
+				<div class="feature-box fbox-effect flex-column">
+                                    <div class="fbox-icon mb-4">
+					<img src="images/cash-payment.png" 
+                                        alt="Feature Icon" class="bg-transparent rounded-0">
+                                    </div>
+                                    <div class="fbox-content">
+					<h3>Pay as Much as Possible</h3>
+                                        <p>Pay as much as possible on your smallest 
+                                            debt. How? Lower expenses, cut spending, 
+                                            sell stuff, nab a side hustle, and get 
+                                            extra money</p>
+                                    </div>
+				</div>
+                            </div>
+                            <div class="col-lg-3 col-sm-6">
+				<div class="feature-box fbox-effect flex-column">
+                                    <div class="fbox-icon mb-4">
+                                        <img src="images/reuse.png" 
+                                        alt="Feature Icon" class="bg-transparent rounded-0">
+                                    </div>
+                                    <div class="fbox-content">
+                                        <h3>Repeat</h3>
+                                        <p>Repeat until each debt is paid in full.</p></div>
+				</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    </section>
 </div>
 </body>
-
 </html>
 
