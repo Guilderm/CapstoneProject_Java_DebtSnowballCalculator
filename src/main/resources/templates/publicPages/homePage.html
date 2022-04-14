@@ -20,8 +20,8 @@
             <div class="d-flex h-100 text-center align-items-center">
                 <!-- TODO: Find out why it is not showing up white-->
                 <div class="w-100 text-white">
-                    <h1 class="display-3">Debt Snowball Method Works!</h1>
-                    <p class="lead mb-0">Looking to get out of debt for good? 
+                    <h1 class="display-3" th:text="#{homepage.video.title}">Debt Snowball Method Works!</h1>
+                    <p class="lead mb-0" th:text="#{homepage.video.advertise}">Looking to get out of debt for good? 
                         You have come to the right place.</p>
                 </div>
             </div>
@@ -33,20 +33,20 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 mx-auto">
-                    <p>The fastest way to build a snowball is to pack some snow 
+                    <p th:text="#{homepage.paragraphone}">The fastest way to build a snowball is to pack some snow 
                         into a tight ball and start rolling it around. As you gain 
                         momentum and speed, your snowball grows into a snow boulder.</p>
-                    <p>So why in the world are we talking about snowballs? Because 
+                    <p th:text="#{homepage.paragraphtwo}">So why in the world are we talking about snowballs? Because 
                         when you use this technique to pay off your debt, you will be 
                         debt-free in no time.</p>
-                    <h3 class="h1 fw-bold mb-3 text-center">How Does 
+                    <h3 class="h1 fw-bold mb-3 text-center" th:text="#{homepage.titleone}">How Does 
                         the Method Work?</h3>
-                    <p>The debt snowball method is a debt-reduction strategy where 
+                    <p th:text="#{homepage.paragraphthree}">The debt snowball method is a debt-reduction strategy where 
                         you pay off debt in order of smallest to largest, gaining 
                         momentum as you knock out each remaining balance. When the 
                         smallest debt is paid in full, you roll the minimum payment 
                         you were making on that debt into the next-smallest debt payment.</p>
-                    <p class="text-center"><strong>Follow the steps below:</strong></p>
+                    <p class="text-center" th:text="#{homepage.paragraphfour}"><strong>Follow the steps below:</strong></p>
                             </br>
                     <p class="mb-0"></p>
                 </div>
@@ -65,8 +65,8 @@
                                     alt="Feature Icon" class="bg-transparent rounded-0">
 				</div>
 				<div class="fbox-content">
-				<h3>List your Debts</h3>
-                                <p>List your debts from smallest to largest regardless 
+				<h3 th:text="#{homepage.titletwo}">List your Debts</h3>
+                                <p th:text="#{homepage.paragraphfive}">List your debts from smallest to largest regardless 
                                     of interest rate.</p>
                                 </div>
                             </div>
@@ -78,8 +78,8 @@
                                         alt="Feature Icon" class="bg-transparent rounded-0">
                                     </div>
                                     <div class="fbox-content">
-					<h3>Attack the Debt</h3>
-                                        <p>Attack the smallest debt and make minimum 
+					<h3 th:text="#{homepage.titlethree}">Attack the Debt</h3>
+                                        <p th:text="#{homepage.paragraphsix}">Attack the smallest debt and make minimum 
                                             payments on all your debts.</p>
                                     </div>
                                 </div>
@@ -91,8 +91,8 @@
                                         alt="Feature Icon" class="bg-transparent rounded-0">
                                     </div>
                                     <div class="fbox-content">
-					<h3>Pay as Much as Possible</h3>
-                                        <p>Pay as much as possible on your smallest 
+					<h3 th:text="#{homepage.titlefour}">Pay as Much as Possible</h3>
+                                        <p th:text="#{homepage.paragraphseven}">Pay as much as possible on your smallest 
                                             debt. How? Lower expenses, cut spending, 
                                             sell stuff, nab a side hustle, and get 
                                             extra money</p>
@@ -106,8 +106,8 @@
                                         alt="Feature Icon" class="bg-transparent rounded-0">
                                     </div>
                                     <div class="fbox-content">
-                                        <h3>Repeat</h3>
-                                        <p>Repeat until each debt is paid in full.</p></div>
+                                        <h3 th:text="#{homepage.titlefive}">Repeat</h3>
+                                        <p th:text="#{homepage.paragrapheigh}">Repeat until each debt is paid in full.</p></div>
 				</div>
                             </div>
                         </div>

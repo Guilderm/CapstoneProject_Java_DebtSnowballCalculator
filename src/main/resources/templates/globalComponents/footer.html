@@ -14,11 +14,11 @@
                             </a>
                         </div>
                         <!-- footer logo -->
-                        <p class="text-center">
+                        <p class="text-center" th:text="#{footer.description}">
                             Financial advice for administration and cancellation 
                             of debts, based on the "Snowball" methodology.
                         </p>
-                        <h5 class="text-center social-title">Follow Us On</h5>
+                        <h5 class="text-center social-title" th:text="#{footer.followuson}">Follow Us On</h5>
                         <ul class="social text-center mt-60">
                             <li>
                                 <a href="javascript:void(0)">
@@ -53,7 +53,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="copyright text-center">
-                            <p class="text">Copyright © 2022 Snowball Finance. All Rights Reserved</p>
+                            <p class="text">Copyright © 2022 [[#{footer.copyright}]]</p>
                         </div>
                         <!--  copyright -->
                     </div>
