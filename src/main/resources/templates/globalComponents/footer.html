@@ -1,67 +1,77 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<body>
-<footer th:fragment="footer">
-    <!--====== FOOTER FIVE PART START ======-->
-    <section class="footer-area footer-five">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-5">
-                    <div class="footer-top-content">
-                        <div class="footer-logo text-center">
-                            <a href="javascript:void(0)">
-                                <img alt="Logo" src="/images/Logo.jpg"/>
-                            </a>
+    <body>
+        <footer th:fragment="footer">
+            <!--====== FOOTER FIVE PART START ======-->
+            <section class="footer-area footer-five">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-5">
+                            <div class="footer-top-content">
+                                <div class="footer-logo text-center">
+                                    <a href="javascript:void(0)">
+                                        <img alt="Logo" src="/images/Logo.jpg"/>
+                                    </a>
+                                </div>
+                                <!-- footer logo -->
+                                <p class="text-center" th:text="#{footer.description}">
+                                    Financial advice for administration and cancellation 
+                                    of debts, based on the "Snowball" methodology.
+                                </p>
+                                <h5 class="text-center social-title" th:text="#{footer.followuson}">Follow Us On</h5>
+                                <ul class="social text-center mt-60">
+                                    <li>
+                                        <a href="javascript:void(0)">
+                                            <i class="lni lni-facebook-filled"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)">
+                                            <i class="lni lni-twitter-original"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)">
+                                            <i class="lni lni-instagram-filled"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)"
+                                           ><i class="lni lni-linkedin-original"></i
+                                            ></a>
+                                    </li>
+                                </ul>
+                                <!-- social -->
+                                <div class="footer-btn-group text-center">
+                                    <button type="button" class="btn btn-primary btn-sm dropdown-toggle" 
+                                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        [[#{footer.lenguage}]]
+                                    </button>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" th:href="@{/(lang=en)}">EN</a>
+                                        <a class="dropdown-item" th:href="@{/(lang=es)}">ES</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <!-- footer logo -->
-                        <p class="text-center" th:text="#{footer.description}">
-                            Financial advice for administration and cancellation 
-                            of debts, based on the "Snowball" methodology.
-                        </p>
-                        <h5 class="text-center social-title" th:text="#{footer.followuson}">Follow Us On</h5>
-                        <ul class="social text-center mt-60">
-                            <li>
-                                <a href="javascript:void(0)">
-                                    <i class="lni lni-facebook-filled"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)">
-                                    <i class="lni lni-twitter-original"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)">
-                                    <i class="lni lni-instagram-filled"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"
-                                ><i class="lni lni-linkedin-original"></i
-                                ></a>
-                            </li>
-                        </ul>
-                        <!-- social -->
+                    </div>
+                    <!-- row -->
+                </div>
+                <!-- container -->
+                <div class="footer-copyright">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="copyright text-center">
+                                    <p class="text">Copyright © 2022 [[#{footer.copyright}]]</p>
+                                </div>
+                                <!--  copyright -->
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!-- row -->
-        </div>
-        <!-- container -->
-        <div class="footer-copyright">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="copyright text-center">
-                            <p class="text">Copyright © 2022 [[#{footer.copyright}]]</p>
-                        </div>
-                        <!--  copyright -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--====== FOOTER FIVE PART ENDS ======-->
-</footer>
-</body>
+            </section>
+            <!--====== FOOTER FIVE PART ENDS ======-->
+        </footer>
+    </body>
 </html>
