@@ -19,4 +19,9 @@ public class userManagement {
     public String userSignUpPage() {
         return "userManagement/userSignUp";
     }
+    
+    @GetMapping("/shoppingCart")
+    public String shoppingCartPage() {
+        return "userManagement/shoppingCartPage";
+    }
 }
