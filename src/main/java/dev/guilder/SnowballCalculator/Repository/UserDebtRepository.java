@@ -6,5 +6,5 @@ import org.springframework.data.repository.CrudRepository;
 
 
 public interface UserDebtRepository extends CrudRepository<UserDebt, Long>{
-    
+    //UserDebt findUserDebtByDescription (String userDebtDescription);
 }

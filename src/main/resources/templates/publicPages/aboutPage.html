@@ -2,18 +2,18 @@
 <html lang="en" layout:decorate="~{globalComponents/layout}"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
     <head>
-        <title>About</title>
+        <title>[[#{navbar.about}]]</title>
         </head>
     <body class="stretched">
         <div class="text-center" layout:fragment="content">
             <img alt="Logo U Fidélitas" src="/images/FidelitasLogo.png">
             <h1>Capstone Project</h1>
             <br>
-            <p>This project contains the follow along code for this class.</p>
-            <p><b>Professor:</b> KENNETH JEANPOL ALVARADO MENDEZ</p>
-            <p><b>Class:</b> Desarrollo de Aplicaciones Web y Patrones (SC-403)</p>
-            <p><b>Topic Project Description:</b></p>
-            <p class="col-md-8 mx-auto">Snowball Finance is a fictitious financial 
+            <p th:text="#{about.paragraphone}">This project contains the follow along code for this class.</p>
+            <p><b th:text="#{about.paragraphtwo}">Professor:</b> KENNETH JEANPOL ALVARADO MENDEZ</p>
+            <p><b th:text="#{about.paragraphthree}">Class:</b> Desarrollo de Aplicaciones Web y Patrones (SC-403)</p>
+            <p><b th:text="#{about.paragraphfour}">Topic Project Description:</b></p>
+            <p class="col-md-8 mx-auto" th:text="#{about.paragraphfive}">Snowball Finance is a fictitious financial 
                 company created for the final project of the "Desarrollo de Aplicaciones 
                 Web y Patrones" Course that provides financial advisory services for 
                 debt management and cancellation, based on he "Snowball" methodology. 
@@ -27,7 +27,7 @@
 		<div class="container clearfix">
                     <div class="row justify-content-center mb-5">
 			<div class="col-xl-6 col-lg-8 text-center">
-                            <h3 class="h1 fw-bold mb-3">Team Members</h3>
+                            <h3 class="h1 fw-bold mb-3" th:text="#{about.title}">Team Members</h3>
 			</div>
                     </div>
                     <div class="row justify-content-center gutter-50 col-mb-30">
@@ -38,7 +38,7 @@
                                      width="64" height="64">
                                     <div>
 					<h4 class="mb-0">Angelo Sotomayor Vargas</h4>
-                                        <h5 class="text-muted mb-0 fw-normal">
+                                        <h5 class="text-muted mb-0 fw-normal" th:text="#{about.titletwo}">
                                             Team Contributor
                                         </h5>
                                     </div>
@@ -52,7 +52,7 @@
                                      width="64" height="64">
                                     <div>
 					<h4 class="mb-0">Guilder W. Milliner</h4>
-                                        <h5 class="text-muted mb-0 fw-normal">
+                                        <h5 class="text-muted mb-0 fw-normal" th:text="#{about.titlethree}">
                                             Team Leader
                                         </h5>
                                     </div>
@@ -66,7 +66,7 @@
                                      width="64" height="64">
                                     <div>
 					<h4 class="mb-0">Glennmar Milliner Whitaker</h4>
-                                        <h5 class="text-muted mb-0 fw-normal">
+                                        <h5 class="text-muted mb-0 fw-normal" th:text="#{about.titlefour}">
                                             Team Contributor
                                         </h5>
                                     </div>
