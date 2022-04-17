@@ -32,7 +32,11 @@ MySQL Workbech<br>
 Java + CSS+ SpringBoot<br>
 Clouding Computing Heruko<br>
 
-DB Info
+## DB Info
 
 ServerName: sc-403-mysql.mysql.database.azure.com DataBase: sc403_finalproject User name: sc403admin password:
 pav8jGVHoNc8fU
+
+## Email Service
+
+Email: programmailservice@gmail.com password: LW2X3HuTni4V7n
