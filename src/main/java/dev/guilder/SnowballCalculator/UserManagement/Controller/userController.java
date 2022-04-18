@@ -13,9 +13,7 @@ public class userController {
     private final RegistrationService registrationService;
 
     @GetMapping("/login")
-    public String loginPage() {
-        return "userManagement/loginPage";
-    }
+    public String loginPage() {        return "userManagement/loginPage";    }
 
     @GetMapping("/profile")
     public String profileDashboard() {

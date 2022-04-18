@@ -34,8 +34,10 @@ Clouding Computing Heruko<br>
 
 ## DB Info
 
-ServerName: sc-403-mysql.mysql.database.azure.com DataBase: sc403_finalproject User name: sc403admin password:
-pav8jGVHoNc8fU
+ServerName: sc-403-mysql.mysql.database.azure.com
+DataBase: sc403_finalproject
+User name: sc403admin
+password: pav8jGVHoNc8fU
 
 ## Email Service
 
