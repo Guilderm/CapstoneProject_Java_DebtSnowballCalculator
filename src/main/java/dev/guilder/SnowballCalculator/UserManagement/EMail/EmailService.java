@@ -1,4 +1,4 @@
-package dev.guilder.SnowballCalculator.email;
+package dev.guilder.SnowballCalculator.UserManagement.EMail;
 
 import lombok.AllArgsConstructor;
 import org.slf4j.Logger;

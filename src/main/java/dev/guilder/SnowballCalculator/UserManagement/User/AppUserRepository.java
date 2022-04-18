@@ -1,4 +1,4 @@
-package dev.guilder.SnowballCalculator.appuser;
+package dev.guilder.SnowballCalculator.UserManagement.User;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;

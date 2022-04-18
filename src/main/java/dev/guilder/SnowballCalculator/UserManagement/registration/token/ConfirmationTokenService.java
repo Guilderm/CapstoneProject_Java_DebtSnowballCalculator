@@ -1,4 +1,4 @@
-package dev.guilder.SnowballCalculator.registration.token;
+package dev.guilder.SnowballCalculator.UserManagement.registration.token;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;

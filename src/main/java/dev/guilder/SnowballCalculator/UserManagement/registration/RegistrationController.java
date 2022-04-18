@@ -1,4 +1,4 @@
-package dev.guilder.SnowballCalculator.registration;
+package dev.guilder.SnowballCalculator.UserManagement.registration;
 
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;

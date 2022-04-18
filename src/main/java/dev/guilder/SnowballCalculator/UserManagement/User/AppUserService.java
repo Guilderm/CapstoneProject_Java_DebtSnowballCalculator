@@ -1,7 +1,7 @@
-package dev.guilder.SnowballCalculator.appuser;
+package dev.guilder.SnowballCalculator.UserManagement.User;
 
-import dev.guilder.SnowballCalculator.registration.token.ConfirmationToken;
-import dev.guilder.SnowballCalculator.registration.token.ConfirmationTokenService;
+import dev.guilder.SnowballCalculator.UserManagement.registration.token.ConfirmationToken;
+import dev.guilder.SnowballCalculator.UserManagement.registration.token.ConfirmationTokenService;
 import lombok.AllArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

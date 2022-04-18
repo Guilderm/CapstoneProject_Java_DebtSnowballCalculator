@@ -1,4 +1,4 @@
-package dev.guilder.SnowballCalculator.security;
+package dev.guilder.SnowballCalculator.UserManagement.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

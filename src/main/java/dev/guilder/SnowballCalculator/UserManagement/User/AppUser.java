@@ -1,4 +1,4 @@
-package dev.guilder.SnowballCalculator.appuser;
+package dev.guilder.SnowballCalculator.UserManagement.User;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
