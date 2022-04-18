@@ -14,7 +14,7 @@ public class userController {
 
     @GetMapping("/login")
     public String loginPage() {
-        return "userManagement/loginPage_TMP";
+        return "userManagement/loginPage";
     }
 
     @GetMapping("/profile")
