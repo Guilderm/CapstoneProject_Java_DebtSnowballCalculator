@@ -1,9 +1,9 @@
 package dev.guilder.SnowballCalculator.UserManagement.Service;
 
+import dev.guilder.SnowballCalculator.UserManagement.Repository.ConfirmationToken;
 import dev.guilder.SnowballCalculator.UserManagement.Repository.User.AppUser;
 import dev.guilder.SnowballCalculator.UserManagement.Repository.User.AppUserRepository;
-import dev.guilder.SnowballCalculator.UserManagement.Service.registration.token.ConfirmationToken;
-import dev.guilder.SnowballCalculator.UserManagement.Service.registration.token.ConfirmationTokenService;
+import dev.guilder.SnowballCalculator.UserManagement.Service.registration.ConfirmationTokenService;
 import lombok.AllArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -58,7 +58,7 @@ public class AppUserService implements UserDetailsService {
         ConfirmationToken confirmationToken = new ConfirmationToken(
                 token,
                 LocalDateTime.now(),
-                LocalDateTime.now().plusMinutes(15),
+                LocalDateTime.now().plusDays(1),
                 appUser
         );
 

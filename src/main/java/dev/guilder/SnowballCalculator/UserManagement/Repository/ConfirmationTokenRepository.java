@@ -1,4 +1,4 @@
-package dev.guilder.SnowballCalculator.UserManagement.Service.registration.token;
+package dev.guilder.SnowballCalculator.UserManagement.Repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;

@@ -1,4 +1,4 @@
-package dev.guilder.SnowballCalculator.UserManagement.Service.security.config;
+package dev.guilder.SnowballCalculator.Configuration;
 
 import dev.guilder.SnowballCalculator.UserManagement.Service.AppUserService;
 import lombok.AllArgsConstructor;
@@ -14,17 +14,26 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 @Configuration
 @AllArgsConstructor
 @EnableWebSecurity
-public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     private final AppUserService appUserService;
     private final BCryptPasswordEncoder bCryptPasswordEncoder;
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
+        //TODO: properly autorice these paages
         http
                 .authorizeRequests().antMatchers("/*").permitAll()
+                .and().csrf().disable()
+
+                .formLogin()
+                .loginPage("/loginPage_TMP.html")
+                .failureUrl("/login-error.html")
                 .and()
-                .csrf().disable();
+                .logout()
+                .logoutSuccessUrl("/");
+
+        ;
     }
 
     @Override
