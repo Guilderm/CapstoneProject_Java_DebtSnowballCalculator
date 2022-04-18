@@ -1,11 +1,12 @@
-package dev.guilder.SnowballCalculator.UserManagement.registration;
+package dev.guilder.SnowballCalculator.UserManagement.Service.registration;
 
-import dev.guilder.SnowballCalculator.UserManagement.EMail.EmailSender;
-import dev.guilder.SnowballCalculator.UserManagement.User.AppUser;
-import dev.guilder.SnowballCalculator.UserManagement.User.AppUserRole;
-import dev.guilder.SnowballCalculator.UserManagement.User.AppUserService;
-import dev.guilder.SnowballCalculator.UserManagement.registration.token.ConfirmationToken;
-import dev.guilder.SnowballCalculator.UserManagement.registration.token.ConfirmationTokenService;
+import dev.guilder.SnowballCalculator.UserManagement.Repository.EMail.EmailSender;
+import dev.guilder.SnowballCalculator.UserManagement.Repository.RegistrationRequest;
+import dev.guilder.SnowballCalculator.UserManagement.Repository.User.AppUser;
+import dev.guilder.SnowballCalculator.UserManagement.Repository.User.AppUserRole;
+import dev.guilder.SnowballCalculator.UserManagement.Service.AppUserService;
+import dev.guilder.SnowballCalculator.UserManagement.Service.registration.token.ConfirmationToken;
+import dev.guilder.SnowballCalculator.UserManagement.Service.registration.token.ConfirmationTokenService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

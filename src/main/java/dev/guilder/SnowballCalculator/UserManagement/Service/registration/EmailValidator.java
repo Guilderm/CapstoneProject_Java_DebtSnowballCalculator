@@ -1,4 +1,4 @@
-package dev.guilder.SnowballCalculator.UserManagement.registration;
+package dev.guilder.SnowballCalculator.UserManagement.Service.registration;
 
 import org.springframework.stereotype.Service;
 

@@ -1,6 +1,6 @@
-package dev.guilder.SnowballCalculator.UserManagement.registration.token;
+package dev.guilder.SnowballCalculator.UserManagement.Service.registration.token;
 
-import dev.guilder.SnowballCalculator.UserManagement.User.AppUser;
+import dev.guilder.SnowballCalculator.UserManagement.Repository.User.AppUser;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;

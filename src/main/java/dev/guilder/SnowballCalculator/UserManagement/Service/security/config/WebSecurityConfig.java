@@ -1,6 +1,6 @@
-package dev.guilder.SnowballCalculator.UserManagement.security.config;
+package dev.guilder.SnowballCalculator.UserManagement.Service.security.config;
 
-import dev.guilder.SnowballCalculator.UserManagement.User.AppUserService;
+import dev.guilder.SnowballCalculator.UserManagement.Service.AppUserService;
 import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
