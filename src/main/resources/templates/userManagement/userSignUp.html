@@ -1,12 +1,65 @@
 <!DOCTYPE html>
 <html lang="en" layout:decorate="~{globalComponents/layout}"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
-<head><title>User Signup</title></head>
+    <head>
+        <link rel="stylesheet" th:href="@{CSS/signupPage.css}">
+        <title>Sign Up</title>
+    </header>
 <body>
-
-<div layout:fragment="content">
-    <h1>User Signup</h1>
-</div>
-
+    <div layout:fragment="content">
+        <section id="content">
+            <div class="content-wrap">
+                <div class="container clearfix">
+                    <div class="form-widget">
+                        <div class="form-result"></div> 
+                        <div class="row justify-content-center">
+                            <div class="col-lg-6">
+                                <h1 class="text-center">Register for an Account</h1>
+                                <form class="row" action="include/form.php" method="post" enctype="multipart/form-data">
+                                    <div class="form-process">
+                                        <div class="css3-spinner">
+                                            <div class="css3-spinner-scaler"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 form-group">
+                                        <label>Fist Name:</label>
+                                        <input type="text" name="FirstName" id="jobs-application-name" class="form-control required" value="" placeholder="Enter your First Name">
+                                    </div>
+                                    <div class="col-12 form-group">
+                                        <label>Last Name:</label>
+                                        <input type="text" name="LastName" id="jobs-application-name" class="form-control required" value="" placeholder="Enter your Last Name">
+                                    </div>
+                                    <div class="col-12 form-group">
+                                        <label>Phone:</label>
+                                        <input type="text" name="Phone" id="jobs-application-phone" class="form-control required" value="" placeholder="Enter your Phone">
+                                    </div>
+                                    <div class="col-12 form-group">
+                                        <div class="row">
+                                            <div class="col-md-6 form-group">
+                                                <label>Email:</label>
+                                                <input type="email" name="Email" id="jobs-application-email" class="form-control required" value="" placeholder="Enter your Email">
+                                            </div>
+                                            <div class="col-md-6 form-group">
+                                                <label>Password:</label>
+                                                <input type="password" name="Password" id="jobs-application-password" class="form-control" value="" placeholder="Enter your Password">
+                                            </div>
+                                            <div class="w-100"></div>
+                                            <div class="w-100"></div>
+                                        </div>
+                                    </div>
+                                    <div class="text-center">
+                                        <button type="submit" name="jobs-application-submit" class="btn btn-primary">Create Account</button>
+                                    </div>
+                                    <input type="hidden" name="prefix" value="jobs-application-">
+                                </form>
+                                </br>
+                                </br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
 </body>
 </html>
