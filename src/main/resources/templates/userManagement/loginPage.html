@@ -1,106 +1,69 @@
 <!DOCTYPE html>
 <html lang="en" layout:decorate="~{globalComponents/layout}"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
-<head>
-    <link rel="stylesheet" th:href="@{CSS/loginPage.css}">
-    <title>Login</title></head>
-<body>
+    <head>
+        <link rel="stylesheet" th:href="@{CSS/loginPage.css}">
+        <title>Login</title></head>
+    <body>
 
-<div layout:fragment="content">
+        <div layout:fragment="content">
 
-    <!--====== SIGNIN THREE PART START ======-->
-    <section class="signin-area signin-area-three">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-6">
-                    <div class="signin-three">
-                        <div class="signin-form form-style-two">
-                            <h3 class="text-center mb-4">Login to your account</h3>
-                            <div class="signin-text text-center">
-                                <p class="text">Enter Credential to Sign In</p>
+            <!--====== SIGNIN THREE PART START ======-->
+            <section class="signin-area signin-area-three">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-6">
+                            <div class="signin-three">
+                                <div class="signin-form form-style-two">
+                                    <h3 class="text-center mb-4">Login to your account</h3>
+                                    <div class="signin-text text-center">
+                                        <p class="text">Enter Credential to Sign In</p>
+                                    </div>
+                                    <form action="#">
+                                        <div class="form-input">
+                                            <div class="input-items default">
+                                                <input placeholder="Email" type="text"/>
+                                                <i class="lni lni-envelope"></i>
+                                            </div>
+                                        </div>
+                                        <!-- form input -->
+                                        <div class="form-input">
+                                            <div class="input-items default">
+                                                <input placeholder="Password" type="password"/>
+                                                <i class="lni lni-key"></i>
+                                            </div>
+                                        </div>
+                                        <!-- form input -->
+                                        <div class="signin-checkbox">
+                                            <input id="checkbox" type="checkbox"/>
+                                            <label for="checkbox"></label>
+                                            <span>Remember me</span>
+                                        </div>
+                                        <div class="form-input light-rounded-buttons text-center">
+                                            <button class="btn primary-btn" type="submit">
+                                                sign in
+                                            </button>
+                                        </div>
+                                        <!-- form input -->
+                                    </form>
+                                </div>
+                                <div class="new-user text-center">
+                                    <p class="text">
+                                        New user?
+                                        <a th:ref="@{/userSignUp}">Don't have an account?</a>
+                                    </p>
+                                </div>
                             </div>
-                            <form action="#">
-                                <div class="form-input">
-                                    <div class="input-items default">
-                                        <input placeholder="Email" type="text"/>
-                                        <i class="lni lni-envelope"></i>
-                                    </div>
-                                </div>
-                                <!-- form input -->
-                                <div class="form-input">
-                                    <div class="input-items default">
-                                        <input placeholder="Password" type="password"/>
-                                        <i class="lni lni-key"></i>
-                                    </div>
-                                </div>
-                                <!-- form input -->
-                                <div class="signin-checkbox">
-                                    <input id="checkbox" type="checkbox"/>
-                                    <label for="checkbox"></label>
-                                    <span>Remember me</span>
-                                </div>
-                                <div class="form-input light-rounded-buttons text-center">
-                                    <button class="btn primary-btn" type="submit">
-                                        sign in
-                                    </button>
-                                </div>
-                                <!-- form input -->
-                            </form>
-                        </div>
-                        <div class="signin-header text-center">
-                            <p>or Sign in with</p>
-                            <ul class="social-signin">
-                                <li>
-                                    <a class="btn primary-btn google" href="javascript:void(0)">
-                                        <svg
-                                                class="icon"
-                                                fill="none"
-                                                height="20px"
-                                                viewBox="0 0 43 44"
-                                                width="20px"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                            <path
-                                                    d="M42.9777 22.4115C42.9777 20.6088 42.8315 19.2934 42.5149 17.9292H21.9287V26.0655H34.0123C33.7688 28.0875 32.4532 31.1326 29.5297 33.1787L29.4887 33.4511L35.9977 38.4932L36.4486 38.5382C40.5901 34.7135 42.9777 29.0862 42.9777 22.4115"
-                                                    fill="#4285F4"
-                                            />
-                                            <path
-                                                    d="M21.9282 43.849C27.8481 43.849 32.818 41.9001 36.4481 38.5385L29.5292 33.179C27.6777 34.4701 25.1926 35.3715 21.9282 35.3715C16.13 35.3715 11.2088 31.547 9.45458 26.2607L9.19744 26.2826L2.42933 31.5201L2.34082 31.7661C5.9464 38.9281 13.3526 43.849 21.9282 43.849Z"
-                                                    fill="#34A853"
-                                            />
-                                            <path
-                                                    d="M9.45443 26.2606C8.99155 24.8965 8.72367 23.4347 8.72367 21.9244C8.72367 20.414 8.99155 18.9524 9.43007 17.5883L9.41781 17.2977L2.56489 11.9761L2.34068 12.0827C0.854643 15.0547 0.00195312 18.3922 0.00195312 21.9244C0.00195312 25.4567 0.854643 28.794 2.34068 31.766L9.45443 26.2606"
-                                                    fill="#FBBC05"
-                                            />
-                                            <path
-                                                    d="M21.9282 8.47739C26.0453 8.47739 28.8226 10.2557 30.4062 11.7418L36.5942 5.70035C32.7938 2.16809 27.8481 0 21.9282 0C13.3526 0 5.9464 4.92078 2.34082 12.0827L9.43022 17.5882C11.2088 12.302 16.13 8.47739 21.9282 8.47739"
-                                                    fill="#EB4335"
-                                            />
-                                        </svg>
-                                        Google
-                                    </a>
-                                </li>
-                                <li>
-                                    <a
-                                            class="btn primary-btn icon-left"
-                                            href="javascript:void(0)"
-                                    >
-                                        <i class="lni lni-facebook-original"></i> Facebook
-                                    </a>
-                                </li>
-                            </ul>
+                            <!-- signin three -->
                         </div>
                     </div>
-                    <!-- signin three -->
+                    <!-- row -->
                 </div>
-            </div>
-            <!-- row -->
+                <!-- container -->
+            </section>
+            <!--====== SIGNIN THREE PART ENDS ======-->
+
         </div>
-        <!-- container -->
-    </section>
-    <!--====== SIGNIN THREE PART ENDS ======-->
 
-</div>
-
-</body>
+    </body>
 </html>

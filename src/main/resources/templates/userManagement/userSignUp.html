@@ -2,64 +2,79 @@
 <html lang="en" layout:decorate="~{globalComponents/layout}"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
     <head>
-        <link rel="stylesheet" th:href="@{CSS/signupPage.css}">
+        <link rel="stylesheet" th:href="@{CSS/signUpPage.css}">
         <title>Sign Up</title>
     </header>
 <body>
     <div layout:fragment="content">
-        <section id="content">
-            <div class="content-wrap">
-                <div class="container clearfix">
-                    <div class="form-widget">
-                        <div class="form-result"></div> 
-                        <div class="row justify-content-center">
-                            <div class="col-lg-6">
-                                <h1 class="text-center">Register for an Account</h1>
-                                <form class="row" action="include/form.php" method="post" enctype="multipart/form-data">
-                                    <div class="form-process">
-                                        <div class="css3-spinner">
-                                            <div class="css3-spinner-scaler"></div>
+        <section class="signin-area signin-area-five">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 offset-lg-3 col-12">
+                        <div class="sing-in-form-area">
+                            <h4 class="sing-in-title">
+                                <i class="lni lni-user"></i> Sign Up.
+                            </h4>
+                            <p class="text">
+                                Register for an Account
+                            </p>
+                            <div class="sing-in-form-wrapper form-style-one">
+                                <form action="#">
+                                    <div class="form-input">
+                                        <label>First name</label>
+                                        <div class="input-items default">
+                                            <input type="text" placeholder="First name" />
+                                            <i class="lni lni-user"></i>
                                         </div>
                                     </div>
-                                    <div class="col-12 form-group">
-                                        <label>Fist Name:</label>
-                                        <input type="text" name="FirstName" id="jobs-application-name" class="form-control required" value="" placeholder="Enter your First Name">
-                                    </div>
-                                    <div class="col-12 form-group">
-                                        <label>Last Name:</label>
-                                        <input type="text" name="LastName" id="jobs-application-name" class="form-control required" value="" placeholder="Enter your Last Name">
-                                    </div>
-                                    <div class="col-12 form-group">
-                                        <label>Phone:</label>
-                                        <input type="text" name="Phone" id="jobs-application-phone" class="form-control required" value="" placeholder="Enter your Phone">
-                                    </div>
-                                    <div class="col-12 form-group">
-                                        <div class="row">
-                                            <div class="col-md-6 form-group">
-                                                <label>Email:</label>
-                                                <input type="email" name="Email" id="jobs-application-email" class="form-control required" value="" placeholder="Enter your Email">
-                                            </div>
-                                            <div class="col-md-6 form-group">
-                                                <label>Password:</label>
-                                                <input type="password" name="Password" id="jobs-application-password" class="form-control" value="" placeholder="Enter your Password">
-                                            </div>
-                                            <div class="w-100"></div>
-                                            <div class="w-100"></div>
+                                    <div class="form-input">
+                                        <label>Last name</label>
+                                        <div class="input-items default">
+                                            <input type="text" placeholder="Last name" />
+                                            <i class="lni lni-user"></i>
                                         </div>
                                     </div>
-                                    <div class="text-center">
-                                        <button type="submit" name="jobs-application-submit" class="btn btn-primary">Create Account</button>
+                                    <div class="form-input">
+                                        <label>Email</label>
+                                        <div class="input-items default">
+                                            <input type="text" placeholder="Email" />
+                                            <i class="lni lni-envelope"></i>
+                                        </div>
                                     </div>
-                                    <input type="hidden" name="prefix" value="jobs-application-">
+                                    <!-- form input -->
+                                    <div class="form-input">
+                                        <label>Password</label>
+                                        <div class="input-items default">
+                                            <input type="password" placeholder="********" />
+                                            <i class="lni lni-key"></i>
+                                        </div>
+                                    </div>
+                                    <!-- single-form -->
+                                    <div class="single-form d-sm-flex justify-content-between">
+                                        <div class="form-checkbox">
+                                            <input type="checkbox" name="checkbox2" id="checkbox2" />
+                                            <label for="checkbox2"></label>
+                                            <span>I agree to the terms and policy.</span>
+                                        </div>
+                                    </div>
+                                    <!-- single-form -->
+                                    <div class="single-form standard-buttons">
+                                        <button type="submit" class="btn primary-btn square">
+                                            Sign Up !
+                                        </button>
+                                    </div>
+                                    <!-- single-form -->
                                 </form>
-                                </br>
-                                </br>
+
                             </div>
+                            <!-- sing in form wrapper -->
                         </div>
+                        <!-- sing in form areasing-in-form-area -->
                     </div>
                 </div>
+                <!-- row -->
             </div>
+            <!-- container -->
         </section>
-    </div>
 </body>
 </html>
