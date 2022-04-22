@@ -30,12 +30,12 @@ public class userController {
         return "userManagement/shoppingCartPage";
     }
 
-    @PostMapping(path = "Register_User")
+    @PostMapping(path = "RegisterUser")
     public String register(@RequestBody RegistrationRequest request) {
         return registrationService.register(request);
     }
 
-    @GetMapping(path = "confirm_User")
+    @GetMapping(path = "confirmUser")
     public String confirm(@RequestParam("token") String token) {
         return registrationService.confirmToken(token);
     }
