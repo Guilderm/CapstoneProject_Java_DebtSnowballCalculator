@@ -30,7 +30,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                <th:block th:each="user:${User}">
+                                <th:block th:each="user:${users}">
                                     <tr>
                                         <td th:text="${user.getFirstName}"></td>
                                         <td th:text="${user.getLastName}"></td>
@@ -42,8 +42,8 @@
                                                     Select
                                                 </button>
                                                 <div class="dropdown-menu">
-                                                    <a class="dropdown-item" href="#">Modify</a>
-                                                    <a class="dropdown-item" href="#">Inactive</a>
+                                                    <a class="dropdown-item" th:href="@{/modifyUser/{id}(id=${user.getId})}">Modify</a>
+                                                    <a class="dropdown-item" th:href="@{/deleteUser/{id}(id=${user.getId})}">Delete</a>
                                                 </div>
                                             </div> 
                                         </td>
