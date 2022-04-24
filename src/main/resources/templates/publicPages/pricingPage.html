@@ -54,14 +54,23 @@
                         </div>
                         <div class="pricing-btn rounded-buttons text-center">
                             <a
-                                    class="btn primary-btn rounded-full" th:action="@{/addCart/{1}}"
-                                    type="submit"
+                                    class="btn primary-btn rounded-full" 
                             >
                                 [[#{pricing.addcart}]]
                             </a>
                         </div>
                     </div>
                     <!-- pricing style one -->
+                    <form th:action="@{/addCart}" method="post" th:object="${newItem}">
+                        <input type="hidden" name="idProduct" th:value="*{1}"/>
+                        </div>
+                                    <div class="single-form standard-buttons">
+                                        <button type="submit" class="btn primary-btn square">
+                                            Add to Cart
+                                        </button>
+                                    </div>
+                                    <!-- single-form -->
+                    </form>
                 </div>
                 <div class="col-lg-4 col-md-7 col-sm-9">
                     <div class="pricing-style-eight">
