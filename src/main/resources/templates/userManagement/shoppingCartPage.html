@@ -20,18 +20,18 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <th:block th:each="item:${products}">
+                                <th:block th:each="product:${products}">
                                 <tr class="cart_item">
                                     <td class="cart-product-name">
                                         <a>Suscrption Plan</a>
                                     </td>
-                                    <td class="cart-product-price" th:text="${item.getName}">
+                                    <td class="cart-product-price" th:text="${product.getName}">
                                     </td>
                                     <td class="cart-product-subtotal">
-                                        <span class="amount" th:text="${item.getPrice}"></span>
+                                        <span class="amount" th:text="${product.getDescription}"></span>
                                     </td>
                                     <td class="cart-product-subtotal">
-                                        <span class="amount" th:text="${item.getPrice}"></span>
+                                        <span class="amount" th:text="${product.getPrice}"></span>
                                     </td>
                                 </tr>
                             </tbody>

@@ -53,9 +53,4 @@ public class userManagement {
     public String profilePage(){
         return "userManagement/profilePage";
     }
-    
-    @GetMapping("/shoppingCart")
-    public String shoppingCartPage(){
-        return "userManagement/shoppingCartPage";
-    }
 }

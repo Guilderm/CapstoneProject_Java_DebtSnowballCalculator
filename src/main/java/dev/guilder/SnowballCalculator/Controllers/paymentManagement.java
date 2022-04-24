@@ -24,11 +24,17 @@ public class paymentManagement {
         return "paymentManagement/invoicePage";
     }
     
+    @GetMapping("/shoppingCart")
+    public String shoppingCartPage(Model model){
+        model.addAttribute("newItem", new Product());
+        return "userManagement/shoppingCartPage";
+    }
+    
     @GetMapping("/addCart/{productId}")
     public String addCart(@PathVariable("productId") Long idProduct, Model model){
-        List<Product> productList = productService.getAllProducts();
-        //Product product = productService.getProductById(idProduct);
-        model.addAttribute("newItem", productList);
-        return "redirect:/shoppingCart";
+        //List<Product> productList = productService.getAllProducts();
+        productService.getProductById(idProduct);
+        //model.addAttribute("newItem", product);
+        return "redirect:/shoppingCartPage";
     }
 }
