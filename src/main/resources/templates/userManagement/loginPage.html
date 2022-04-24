@@ -15,9 +15,9 @@
                         <div class="col-lg-6">
                             <div class="signin-three">
                                 <div class="signin-form form-style-two">
-                                    <h3 class="text-center mb-4">Login to your account</h3>
+                                    <h3 class="text-center mb-4" th:text="#{signin.title}">Login to your account</h3>
                                     <div class="signin-text text-center">
-                                        <p class="text">Enter Credential to Sign In</p>
+                                        <p class="text" th:text="#{signin.paragraph}">Enter Credential to Sign In</p>
                                     </div>
                                     <form action="#">
                                         <div class="form-input">
@@ -37,11 +37,11 @@
                                         <div class="signin-checkbox">
                                             <input id="checkbox" type="checkbox"/>
                                             <label for="checkbox"></label>
-                                            <span>Remember me</span>
+                                            <span th:text="#{signin.checkbox}">Remember me</span>
                                         </div>
                                         <div class="form-input light-rounded-buttons text-center">
-                                            <button class="btn primary-btn" type="submit">
-                                                sign in
+                                            <button class="btn primary-btn" type="submit" th:text="#{signin.bottom}">
+                                                Sign In
                                             </button>
                                         </div>
                                         <!-- form input -->
@@ -49,8 +49,8 @@
                                 </div>
                                 <div class="new-user text-center">
                                     <p class="text">
-                                        New user?
-                                        <a th:ref="@{/userSignUp}">Don't have an account?</a>
+                                        [[#{signin.paragraphtwo}]]
+                                        <a th:href="@{/userSignUp}" th:text="#{signin.link}">Don't have an account?</a>
                                     </p>
                                 </div>
                             </div>

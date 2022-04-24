@@ -14,51 +14,24 @@
                             <thead>
                                 <tr>
                                     <th class="cart-product-name">Product</th>
+                                    <th class="cart-product-name">Plan Selected</th>
                                     <th class="cart-product-price">Unit Price</th>
                                     <th class="cart-product-subtotal">Total</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                <th:block th:each="item:${products}">
                                 <tr class="cart_item">
                                     <td class="cart-product-name">
-                                        <a href="#">PLAN 1</a>
+                                        <a>Suscrption Plan</a>
                                     </td>
-                                    <td class="cart-product-price">
-                                        <span class="amount">$19.99</span>
-                                    </td>
-                                    <td class="cart-product-subtotal">
-                                        <span class="amount">$39.98</span>
-                                    </td>
-                                </tr>
-                                <tr class="cart_item">
-                                    <td class="cart-product-name">
-                                        <a href="#">PLAN 2</a>
-                                    </td>
-                                    <td class="cart-product-price">
-                                        <span class="amount">$19.99</span>
+                                    <td class="cart-product-price" th:text="${item.getName}">
                                     </td>
                                     <td class="cart-product-subtotal">
-                                        <span class="amount">$39.98</span>
-                                    </td>
-                                </tr>
-                                <tr class="cart_item">
-                                    <td class="cart-product-name">
-                                        <a href="#">PLAN 3</a>
-                                    </td>
-                                    <td class="cart-product-price">
-                                        <span class="amount">$19.99</span>
+                                        <span class="amount" th:text="${item.getPrice}"></span>
                                     </td>
                                     <td class="cart-product-subtotal">
-                                        <span class="amount">$39.98</span>
-                                    </td>
-                                </tr>
-                                <tr class="cart_item">
-                                    <td colspan="6">
-                                        <div class="row justify-content-between py-2 col-mb-30">
-                                            <div class="col-lg-auto pe-lg-0">
-                                                <a th:href="@{/Checkout}" class="button button-3d mt-2 mt-sm-0 me-0">Proceed to Checkout</a>
-                                            </div>
-                                        </div>
+                                        <span class="amount" th:text="${item.getPrice}"></span>
                                     </td>
                                 </tr>
                             </tbody>

@@ -9,14 +9,14 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table (name = "Products")
+@Table (name = "products")
 public class Product implements Serializable{
     private static final long serialVersionUID= 1L;
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private long productId;
-    private String Name;
-    private String Description;
+    private String name;
+    private String description;
     private double price;
 
     public long getProductId() {
@@ -28,19 +28,19 @@ public class Product implements Serializable{
     }
 
     public String getName() {
-        return Name;
+        return name;
     }
 
     public void setName(String Name) {
-        this.Name = Name;
+        this.name = Name;
     }
 
     public String getDescription() {
-        return Description;
+        return description;
     }
 
     public void setDescription(String Description) {
-        this.Description = Description;
+        this.description = Description;
     }
 
     public double getPrice() {

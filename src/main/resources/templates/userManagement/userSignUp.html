@@ -22,7 +22,6 @@
                                 <form th:action="@{/saveUser}" method="post" th:object="${newUser}">
                                     <div class="form-input">
                                         <input type="hidden" name="idUser" th:field="*{id}"/>
-                                        <input type="hidden" name="userRole" th:field="*{id}"/>
                                         <label>First name</label>
                                         <div class="input-items default">
                                             <input type="text" placeholder="First name" name="FirstName" th:field="*{firstName}"/>

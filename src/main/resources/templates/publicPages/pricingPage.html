@@ -13,8 +13,8 @@
             <div class="row justify-content-center">
                 <div class="col-xxl-6 col-xl-7 col-lg-8">
                     <div class="section-title text-center">
-                        <h2 class="mb-3 fw-bold">Select your Plan</h2>
-                        <p class="text-lg">
+                        <h2 class="mb-3 fw-bold" th:text="#{pricing.title}">Pay off debt faster and live the life you really want!</h2>
+                        <p class="text-lg" th:text="#{pricing.paragraph}">
                             A financial plan will guide you to the rapid cancellation 
                             of your debts through a series of resources and steps to 
                             follow that will teach you how to save for emergencies, 
@@ -27,35 +27,37 @@
                 <div class="col-lg-4 col-md-7 col-sm-9">
                     <div class="pricing-style-eight">
                         <div class="pricing-icon">
-                            <i class="lni lni-thumbs-up"></i>
+                            <i class="lni lni-handshake"></i>
                         </div>
                         <div class="pricing-header text-center">
-                            <h5 class="sub-title">Basic</h5>
-                            <h3 class="price">$199<span class="month">/month</span></h3>
+                            <h5 class="sub-title" th:text="#{pricing.planbasictitle}">Education<p class="month" th:text="#{pricing.planbasicsubtitle}">Basic<p></h5>
+                        <div>
+                            <p th:text="#{pricing.planbasicparagraph}">Learn to better manage your money quickly and easily.</p>
+                        </div>
+                            <h3 class="price">$19.99</h3>
                         </div>
                         <div class="pricing-list">
                             <ul>
                                 <li>
-                                    <i class="lni lni-checkmark-circle"></i> Promotional
-                                    Materials
+                                    <i class="lni lni-checkmark-circle" ></i> [[#{pricing.planbasiclistone}]]
                                 </li>
                                 <li>
-                                    <i class="lni lni-checkmark-circle"></i> Self-Guide Training
+                                    <i class="lni lni-checkmark-circle"></i> [[#{pricing.planbasiclisttwo}]]
                                 </li>
                                 <li>
-                                    <i class="lni lni-checkmark-circle"></i> Video Lessons
+                                    <i class="lni lni-checkmark-circle"></i> [[#{pricing.planbasiclistthree}]]
                                 </li>
                                 <li>
-                                    <i class="lni lni-checkmark-circle"></i> Ask a Coach Chat
+                                    <i class="lni lni-checkmark-circle"></i> [[#{pricing.planbasiclistfour}]]
                                 </li>
                             </ul>
                         </div>
                         <div class="pricing-btn rounded-buttons text-center">
                             <a
-                                    class="btn primary-btn rounded-full"
-                                    href="javascript:void(0)"
+                                    class="btn primary-btn rounded-full" th:action="@{/addCart}"
+                                    
                             >
-                                GET STARTED
+                                [[#{pricing.addcart}]]
                             </a>
                         </div>
                     </div>
@@ -64,34 +66,74 @@
                 <div class="col-lg-4 col-md-7 col-sm-9">
                     <div class="pricing-style-eight">
                         <div class="pricing-icon">
-                            <i class="lni lni-users"></i>
+                            <i class="lni lni-investment"></i>
                         </div>
                         <div class="pricing-header text-center">
-                            <h5 class="sub-title">Pro</h5>
-                            <h3 class="price">$399<span class="month">/month</span></h3>
+                            <h5 class="sub-title" th:text="#{pricing.planmediumtitle}">Encouragement<p class="month" th:text="#{pricing.planmediumsubtitle}">Medium<p></h5>
+                        <div>
+                            <p th:text="#{pricing.planmediumparagraph}">Build momentum with small wins along the way.</p>
+                        </div>
+                            <h3 class="price">$59.99</h3>
                         </div>
                         <div class="pricing-list">
                             <ul>
                                 <li>
-                                    <i class="lni lni-checkmark-circle"></i> Live Trainings
+                                    <i class="lni lni-checkmark-circle"></i> [[#{pricing.planmediumlistone}]]
                                 </li>
                                 <li>
-                                    <i class="lni lni-checkmark-circle"></i> Video Lessons
+                                    <i class="lni lni-checkmark-circle"></i> [[#{pricing.planmediumlisttwo}]]
                                 </li>
                                 <li>
-                                    <i class="lni lni-checkmark-circle"></i> Dedicated Coach
+                                    <i class="lni lni-checkmark-circle"></i> [[#{pricing.planmediumlistthree}]]
                                 </li>
                                 <li>
-                                    <i class="lni lni-checkmark-circle"></i> Custom Action Plan
+                                    <i class="lni lni-checkmark-circle"></i> [[#{pricing.planmediumlistfour}]]
                                 </li>
                             </ul>
                         </div>
                         <div class="pricing-btn rounded-buttons text-center">
                             <a
                                     class="btn primary-btn rounded-full"
-                                    href="javascript:void(0)"
+                                    th:href="@{/shoppingCart}"
                             >
-                                GET STARTED
+                                [[#{pricing.addcart}]]
+                            </a>
+                        </div>
+                    </div>
+                    <!-- pricing style one -->
+                </div>
+                <div class="col-lg-4 col-md-7 col-sm-9">
+                    <div class="pricing-style-eight">
+                        <div class="pricing-icon">
+                            <i class="lni lni-invest-monitor"></i>
+                        </div>
+                        <div class="pricing-header text-center">
+                            <h5 class="sub-title" th:text="#{pricing.planprotitle}">Empowerment<p class="month">PRO<p></h5>
+                            <div>
+                            <p th:text="#{pricing.planproparagraph}">Make financial decisions with confidence in every aspect of your life.</p>
+                            </div>
+                            <h3 class="price">$129.99</h3>
+                        </div>
+                        <div class="pricing-list">
+                            <ul>
+                                <li>
+                                    <i class="lni lni-checkmark-circle"></i> [[#{pricing.planprolistone}]]
+                                </li>
+                                <li>
+                                    <i class="lni lni-checkmark-circle"></i> [[#{pricing.planprolisttwo}]]
+                                </li>
+                                <li>
+                                    <i class="lni lni-checkmark-circle"></i> [[#{pricing.planprolistthree}]]
+                                </li>
+                                <li>
+                                    <i class="lni lni-checkmark-circle"></i> [[#{pricing.planprolistfour}]]
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="pricing-btn rounded-buttons text-center">
+                            <a class="btn primary-btn rounded-full"
+                            >
+                                [[#{pricing.addcart}]]
                             </a>
                         </div>
                     </div>
