@@ -1,8 +1,8 @@
 package dev.guilder.SnowballCalculator.UserManagement.Service;
 
 import dev.guilder.SnowballCalculator.UserManagement.Entitys.AppUser;
-import dev.guilder.SnowballCalculator.UserManagement.Entitys.AppUserRepository;
 import dev.guilder.SnowballCalculator.UserManagement.Entitys.ConfirmationToken;
+import dev.guilder.SnowballCalculator.UserManagement.Repository.AppUserRepository;
 import dev.guilder.SnowballCalculator.UserManagement.Service.Registration.ConfirmationTokenService;
 import lombok.AllArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -10,12 +10,15 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.UUID;
 
 @Service
 @AllArgsConstructor
-public class AppUserService implements UserDetailsService {
+public class AppUserService implements UserDetailsService, UserService {
 
     private final static String USER_NOT_FOUND_MSG =
             "user with email %s not found";
@@ -72,4 +75,33 @@ public class AppUserService implements UserDetailsService {
     public int enableAppUser(String email) {
         return appUserRepository.enableAppUser(email);
     }
+
+    @Override
+    @Transactional(readOnly = true)
+    public List<AppUser> getAllUsers() {
+        return (List<AppUser>) appUserRepository.findAll();
+    }
+
+    @Transactional
+    public void saveUser(AppUser appUser) {
+        appUserRepository.save(appUser);
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public AppUser getUserById(long id) {
+        return appUserRepository.findById(id).orElse(null);
+    }
+
+    @Override
+    @Transactional
+    public void deleteUser(long id) {
+        appUserRepository.deleteById(id);
+    }
+
+    /*@Override
+    @Transactional (readOnly = true)
+    public User findUserByName(String firstName) {
+        return userRepository.findUserByName(firstName);
+    }*/
 }

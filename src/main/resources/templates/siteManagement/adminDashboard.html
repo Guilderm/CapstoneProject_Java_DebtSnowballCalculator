@@ -45,25 +45,22 @@
                                             <tr>
                                                 <th th:text="#{admindashboard.userstablefirstname}">FirstName</th>
                                                 <th th:text="#{admindashboard.userstablelastname}">LastName</th>
-                                                <th th:text="#{admindashboard.userstabletelephone}">Telephone</th>
                                                 <th th:text="#{admindashboard.userstableemail}">Email</th>
-                                                <th th:text="#{admindashboard.userstableprofile}">Profile</th>
                                                 <th th:text="#{admindashboard.userstableaction}">Action</th>
                                             </tr>
                                             </thead>
                                             <tbody>
-                                            <th:block th:each="user:${users}">
+                                            <th:block th:each="user:${appUser}">
                                                 <tr>
                                                     <td th:text="${user.getFirstName}"></td>
                                                     <td th:text="${user.getLastName}"></td>
-                                                    <td th:text="${user.getTelephone}"></td>
                                                     <td th:text="${user.getEmail}"></td>
-                                                    <td th:text="${user.getUserRole.getRoleName}"></td>
                                                     <td>
                                                         <div class="btn-group">
                                                             <button aria-expanded="false"
                                                                     aria-haspopup="true"
-                                                                    class="btn btn-secondary btn-sm dropdown-toggle" data-bs-toggle="dropdown"
+                                                                    class="btn btn-secondary btn-sm dropdown-toggle"
+                                                                    data-bs-toggle="dropdown"
                                                                     type="button">
                                                                 Select
                                                             </button>

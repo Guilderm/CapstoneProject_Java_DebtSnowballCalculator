@@ -17,10 +17,6 @@ public class Users implements Serializable {
     private String email;
     private String password;
 
-    @ManyToOne
-    @JoinColumn(name = "user_rol_id")
-    private UserRole userRole;
-
     public long getId() {
         return id;
     }
@@ -67,13 +63,5 @@ public class Users implements Serializable {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public UserRole getUserRole() {
-        return userRole;
-    }
-
-    public void setUserRole(UserRole userRole) {
-        this.userRole = userRole;
     }
 }
