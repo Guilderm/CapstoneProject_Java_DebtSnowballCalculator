@@ -1,4 +1,4 @@
-package dev.guilder.SnowballCalculator.UserManagement.Repository.User;
+package dev.guilder.SnowballCalculator.UserManagement.Entitys;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
@@ -10,11 +10,15 @@ import java.util.Optional;
 
 @Repository
 @Transactional(readOnly = true)
-public interface AppUserRepository extends JpaRepository<AppUser, Long> {
+public interface AppUserRepository
+        extends JpaRepository<AppUser, Long> {
+
     Optional<AppUser> findByEmail(String email);
 
     @Transactional
     @Modifying
-    @Query("UPDATE AppUser a " + "SET a.enabled = TRUE WHERE a.email = ?1")
+    @Query("UPDATE AppUser a " +
+            "SET a.enabled = TRUE WHERE a.email = ?1")
     int enableAppUser(String email);
+
 }

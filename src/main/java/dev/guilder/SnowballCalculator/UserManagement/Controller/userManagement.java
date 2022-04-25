@@ -1,11 +1,8 @@
 
-package dev.guilder.SnowballCalculator.Controllers;
+package dev.guilder.SnowballCalculator.UserManagement.Controller;
 
-import dev.guilder.SnowballCalculator.Entitys.Product;
-import dev.guilder.SnowballCalculator.Entitys.User;
-import dev.guilder.SnowballCalculator.Services.ProductService;
+import dev.guilder.SnowballCalculator.Entitys.Users;
 import dev.guilder.SnowballCalculator.Services.UserService;
-import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,13 +18,13 @@ public class userManagement {
     
     @GetMapping("/userSignUp")
     public String userSignUpPage(Model model){
-        model.addAttribute("newUser", new User());
+        model.addAttribute("newUser", new Users());
         return "userManagement/userSignUp";
     }
     
     @PostMapping("/saveUser")
-    public String saveUser(@ModelAttribute User user){
-        userService.saveUser(user);
+    public String saveUser(@ModelAttribute Users users){
+        userService.saveUser(users);
         return "redirect:/";
     }
     
@@ -39,16 +36,11 @@ public class userManagement {
     
     @GetMapping("/changeUser/{id}")
     public String changeUser(@PathVariable("id") Long idUser, Model model){
-        User user = userService.getUserById(idUser);
-        model.addAttribute("alterUser", user);
+        Users users = userService.getUserById(idUser);
+        model.addAttribute("alterUser", users);
         return "userManagement/modifyUserPage";
     }
-    
-    @GetMapping("/login")
-    public String loginPage(){
-        return "userManagement/loginPage";
-    }
-    
+
     @GetMapping("/profile")
     public String profilePage(){
         return "userManagement/profilePage";

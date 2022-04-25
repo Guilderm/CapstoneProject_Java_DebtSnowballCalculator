@@ -1,8 +1,5 @@
-package dev.guilder.SnowballCalculator.UserManagement.Service.registration;
+package dev.guilder.SnowballCalculator.UserManagement.Service.Registration.Token;
 
-
-import dev.guilder.SnowballCalculator.UserManagement.Entitys.ConfirmationToken;
-import dev.guilder.SnowballCalculator.UserManagement.Repository.ConfirmationTokenRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 

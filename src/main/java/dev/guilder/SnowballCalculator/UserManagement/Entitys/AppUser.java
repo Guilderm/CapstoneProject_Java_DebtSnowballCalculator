@@ -1,4 +1,4 @@
-package dev.guilder.SnowballCalculator.UserManagement.Repository.User;
+package dev.guilder.SnowballCalculator.UserManagement.Entitys;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -21,14 +21,14 @@ public class AppUser implements UserDetails {
 
 
     @SequenceGenerator(
-            name = "UserSequence",
-            sequenceName = "UserSequence",
+            name = "student_sequence",
+            sequenceName = "student_sequence",
             allocationSize = 1
     )
     @Id
     @GeneratedValue(
             strategy = GenerationType.SEQUENCE,
-            generator = "UserSequence"
+            generator = "student_sequence"
     )
     private Long id;
     private String firstName;

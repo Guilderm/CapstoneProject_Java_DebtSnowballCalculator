@@ -1,12 +1,11 @@
 package dev.guilder.SnowballCalculator.UserManagement.Service.registration;
 
-
-import dev.guilder.SnowballCalculator.UserManagement.Entitys.AppUser;
-import dev.guilder.SnowballCalculator.UserManagement.Entitys.AppUserRole;
-import dev.guilder.SnowballCalculator.UserManagement.Entitys.ConfirmationToken;
+import dev.guilder.SnowballCalculator.UserManagement.Repository.ConfirmationToken;
 import dev.guilder.SnowballCalculator.UserManagement.Repository.RegistrationRequest;
+import dev.guilder.SnowballCalculator.UserManagement.Repository.User.AppUser;
+import dev.guilder.SnowballCalculator.UserManagement.Repository.User.AppUserRole;
 import dev.guilder.SnowballCalculator.UserManagement.Service.AppUserService;
-import dev.guilder.SnowballCalculator.Utilities.EMail.EmailSender;
+import dev.guilder.SnowballCalculator.Utilities.Service.EMail.EmailSender;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -18,8 +17,8 @@ import java.time.LocalDateTime;
 public class RegistrationService {
 
     private final AppUserService appUserService;
-    private final dev.guilder.SnowballCalculator.UserManagement.Service.registration.EmailValidator emailValidator;
-    private final dev.guilder.SnowballCalculator.UserManagement.Service.registration.ConfirmationTokenService confirmationTokenService;
+    private final EmailValidator emailValidator;
+    private final ConfirmationTokenService confirmationTokenService;
     private final EmailSender emailSender;
 
     public String register(RegistrationRequest request) {
@@ -41,7 +40,7 @@ public class RegistrationService {
                 )
         );
 
-        String link = "http://localhost:8080/api/v1/registration/confirm?token=" + token;
+        String link = "http://localhost/api/v1/registration/confirm?token=" + token;
         emailSender.send(
                 request.getEmail(),
                 buildEmail(request.getFirstName(), link));

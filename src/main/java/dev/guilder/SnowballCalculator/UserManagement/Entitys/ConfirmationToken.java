@@ -1,6 +1,5 @@
-package dev.guilder.SnowballCalculator.UserManagement.Repository;
+package dev.guilder.SnowballCalculator.UserManagement.Entitys;
 
-import dev.guilder.SnowballCalculator.UserManagement.Repository.User.AppUser;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;

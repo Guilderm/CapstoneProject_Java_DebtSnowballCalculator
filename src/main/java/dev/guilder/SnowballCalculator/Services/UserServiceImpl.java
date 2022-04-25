@@ -1,7 +1,7 @@
 
 package dev.guilder.SnowballCalculator.Services;
 
-import dev.guilder.SnowballCalculator.Entitys.User;
+import dev.guilder.SnowballCalculator.Entitys.Users;
 import dev.guilder.SnowballCalculator.Repository.UserRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,30 +12,30 @@ import org.springframework.transaction.annotation.Transactional;
 public class UserServiceImpl implements UserService{
 
     @Autowired
-    private UserRepository userRepository;
+    private UserRepository userRepositoryTMP;
     
     @Override
     @Transactional (readOnly = true)
-    public List<User> getAllUsers() {
-        return (List<User>)userRepository.findAll();
+    public List<Users> getAllUsers() {
+        return (List<Users>) userRepositoryTMP.findAll();
     }
 
     @Override
     @Transactional
-    public void saveUser(User user) {
-        userRepository.save(user);
+    public void saveUser(Users users) {
+        userRepositoryTMP.save(users);
     }
 
     @Override
     @Transactional (readOnly = true)
-    public User getUserById(long id) {
-        return userRepository.findById(id).orElse(null);
+    public Users getUserById(long id) {
+        return userRepositoryTMP.findById(id).orElse(null);
     }
 
     @Override
     @Transactional
     public void deleteUser(long id) {
-        userRepository.deleteById(id);
+        userRepositoryTMP.deleteById(id);
     }
 
     /*@Override

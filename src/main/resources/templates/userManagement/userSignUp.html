@@ -13,38 +13,37 @@
                     <div class="col-lg-6 offset-lg-3 col-12">
                         <div class="sing-in-form-area">
                             <h4 class="sing-in-title">
-                                <i class="lni lni-user"></i> [[#{signup.title}]]
+                                <i class="lni lni-user"></i> Sign Up.
                             </h4>
-                            <p class="text" th:text="#{signup.paragraph}">
+                            <p class="text">
                                 Register for an Account
                             </p>
                             <div class="sing-in-form-wrapper form-style-one">
                                 <form th:action="@{/saveUser}" method="post" th:object="${newUser}">
                                     <div class="form-input">
-                                        <input for="id" type="hidden" name="idUser" th:field="*{id}"/>
-
-                                        <label th:text="#{signup.firstname}">First name</label>
+                                        <input type="hidden" name="idUser" th:field="*{id}"/>
+                                        <label>First name</label>
                                         <div class="input-items default">
                                             <input type="text" placeholder="First name" name="FirstName" th:field="*{firstName}"/>
                                             <i class="lni lni-user"></i>
                                         </div>
                                     </div>
                                     <div class="form-input">
-                                        <label th:text="#{signup.lastname}">Last name</label>
+                                        <label>Last name</label>
                                         <div class="input-items default">
                                             <input type="text" placeholder="Last name" name="LastName" th:field="*{LastName}"/>
                                             <i class="lni lni-user"></i>
                                         </div>
                                     </div>
                                     <div class="form-input">
-                                        <label th:text="#{signup.telephone}">Telephone</label>
+                                        <label>Telephone</label>
                                         <div class="input-items default">
                                             <input type="tel" placeholder="Telephone" name="Telephone" th:field="*{telephone}"/>
                                             <i class="lni lni-phone"></i>
                                         </div>
                                     </div>
                                     <div class="form-input">
-                                        <label th:text="#{signup.email}">Email</label>
+                                        <label>Email</label>
                                         <div class="input-items default">
                                             <input type="email" placeholder="Email" name="Email" th:field="*{email}"/>
                                             <i class="lni lni-envelope"></i>
@@ -52,34 +51,24 @@
                                     </div>
                                     <!-- form input -->
                                     <div class="form-input">
-                                        <label th:text="#{signup.password}">Password</label>
+                                        <label>Password</label>
                                         <div class="input-items default">
                                             <input type="password" placeholder="********" name="Password" th:field="*{password}"/>
                                             <i class="lni lni-key"></i>
                                         </div>
                                     </div>
-                                    <!--<div>
-                                         <label for="userRoleId">Rol:</label>
-                                        <select th:field="*{userRoleId}">
-                                        <option th:each="rol:${user_role}" th:value="${rol.UserRolId}"
-                                                th:text="${rol.roleName}"/>
-                                    </select>
-                                    </div>-->
-                                    
-
-                                    <!--<input for="userRolId" type="hidden" name="userRolId" th:each="rol:${user_role}" value="2" th:value="${rol.UserRolId}" th:field="*{userRoleId}"/>-->
-                                    
+                                    <!-- single-form -->
                                     <div class="single-form d-sm-flex justify-content-between">
                                         <div class="form-checkbox">
                                             <input type="checkbox" name="checkbox2" id="checkbox2" />
                                             <label for="checkbox2"></label>
-                                            <span th:text="#{signup.checkbox}">I agree to the terms and policy.</span>
+                                            <span>I agree to the terms and policy.</span>
                                         </div>
                                     </div>
                                     <!-- single-form -->
                                     <div class="single-form standard-buttons">
                                         <button type="submit" class="btn primary-btn square">
-                                            [[#{signup.bottom}]]
+                                            Sign Up !
                                         </button>
                                     </div>
                                     <!-- single-form -->

@@ -19,7 +19,7 @@
                                     <div class="signin-text text-center">
                                         <p class="text" th:text="#{signin.paragraph}">Enter Credential to Sign In</p>
                                     </div>
-                                    <form action="#">
+                                    <form th:action="@{/login}" method="post">
                                         <div class="form-input">
                                             <div class="input-items default">
                                                 <input placeholder="Email" type="text"/>
@@ -47,7 +47,7 @@
                                         <!-- form input -->
                                     </form>
                                 </div>
-                                <div class="new-user text-center">
+                                <div class="new-users text-center">
                                     <p class="text">
                                         [[#{signin.paragraphtwo}]]
                                         <a th:href="@{/userSignUp}" th:text="#{signin.link}">Don't have an account?</a>

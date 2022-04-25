@@ -1,5 +1,7 @@
 package dev.guilder.SnowballCalculator.UserManagement.Repository;
 
+
+import dev.guilder.SnowballCalculator.UserManagement.Entitys.ConfirmationToken;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
