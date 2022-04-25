@@ -1,10 +1,8 @@
 package dev.guilder.SnowballCalculator.UserManagement.Controller;
 
-
 import dev.guilder.SnowballCalculator.UserManagement.Repository.RegistrationRequest;
-import dev.guilder.SnowballCalculator.UserManagement.Service.registration.RegistrationService;
+import dev.guilder.SnowballCalculator.UserManagement.Service.Registration.RegistrationService;
 import lombok.AllArgsConstructor;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
