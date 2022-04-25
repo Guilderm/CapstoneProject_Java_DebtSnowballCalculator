@@ -1,5 +1,4 @@
-package dev.guilder.SnowballCalculator.UserManagement.Service.registration;
-
+package dev.guilder.SnowballCalculator.UserManagement.Service.Registration;
 
 import dev.guilder.SnowballCalculator.UserManagement.Entitys.AppUser;
 import dev.guilder.SnowballCalculator.UserManagement.Entitys.AppUserRole;
@@ -7,10 +6,10 @@ import dev.guilder.SnowballCalculator.UserManagement.Entitys.ConfirmationToken;
 import dev.guilder.SnowballCalculator.UserManagement.Repository.RegistrationRequest;
 import dev.guilder.SnowballCalculator.UserManagement.Service.AppUserService;
 import dev.guilder.SnowballCalculator.Utilities.EMail.EmailSender;
+import dev.guilder.SnowballCalculator.UserManagement.Service.registration.ConfirmationTokenService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 import java.time.LocalDateTime;
 
 @Service
@@ -18,8 +17,8 @@ import java.time.LocalDateTime;
 public class RegistrationService {
 
     private final AppUserService appUserService;
-    private final dev.guilder.SnowballCalculator.UserManagement.Service.registration.EmailValidator emailValidator;
-    private final dev.guilder.SnowballCalculator.UserManagement.Service.registration.ConfirmationTokenService confirmationTokenService;
+    private final EmailValidator emailValidator;
+    private final ConfirmationTokenService confirmationTokenService;
     private final EmailSender emailSender;
 
     public String register(RegistrationRequest request) {

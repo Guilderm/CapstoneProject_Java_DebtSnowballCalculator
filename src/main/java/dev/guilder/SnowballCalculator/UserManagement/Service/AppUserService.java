@@ -3,7 +3,6 @@ package dev.guilder.SnowballCalculator.UserManagement.Service;
 import dev.guilder.SnowballCalculator.UserManagement.Entitys.AppUser;
 import dev.guilder.SnowballCalculator.UserManagement.Entitys.AppUserRepository;
 import dev.guilder.SnowballCalculator.UserManagement.Entitys.ConfirmationToken;
-import dev.guilder.SnowballCalculator.UserManagement.Service.Registration.ConfirmationTokenService;
 import lombok.AllArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -23,7 +22,7 @@ public class AppUserService implements UserDetailsService {
 
     private final AppUserRepository appUserRepository;
     private final BCryptPasswordEncoder bCryptPasswordEncoder;
-    private final ConfirmationTokenService confirmationTokenService;
+    private final dev.guilder.SnowballCalculator.UserManagement.Service.registration.ConfirmationTokenService confirmationTokenService;
 
     @Override
     public UserDetails loadUserByUsername(String email)
