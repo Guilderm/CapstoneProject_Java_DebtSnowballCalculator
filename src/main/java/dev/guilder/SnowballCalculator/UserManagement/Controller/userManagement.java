@@ -13,8 +13,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class userManagement {
 
+    // private final RegistrationService registrationService;
+
     @Autowired
     private AppUserService appUserService;
+
 
     @GetMapping("/userSignUp")
     public String userSignUpPage(Model model) {
@@ -25,6 +28,7 @@ public class userManagement {
     @PostMapping("/saveUser")
     public String saveUser(@ModelAttribute AppUser appUser) {
         appUserService.saveUser(appUser);
+        //return registrationService.register(appUser);
         return "redirect:/";
     }
 

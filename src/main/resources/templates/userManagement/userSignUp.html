@@ -38,16 +38,6 @@
                                         <i class="lni lni-user"></i>
                                     </div>
                                 </div>
-                                <!--
-                                <div class="form-input">
-                                    <label th:text="#{signup.telephone}">Telephone</label>
-                                    <div class="input-items default">
-                                        <input name="Telephone" placeholder="Telephone" th:field="*{telephone}"
-                                               type="tel"/>
-                                        <i class="lni lni-phone"></i>
-                                    </div>
-                                </div>
-                                -->
                                 <div class="form-input">
                                     <label th:text="#{signup.email}">Email</label>
                                     <div class="input-items default">
@@ -64,25 +54,6 @@
                                         <i class="lni lni-key"></i>
                                     </div>
                                 </div>
-                                <div class="form-input">
-                                    <label for="userRoleId">Rol</label>
-                                    <div class="input-items default">
-                                        <input name="userRolId" placeholder="Rol" th:each="rol:${user_role}" th:field="*{userRolId}"
-                                               type="text"/>
-                                        <i class="lni lni-key"></i>
-                                    </div>
-                                </div>
-                                <!--<div class="form-input">
-                                    <label >Rol:</label>
-                                    <select >
-                                        <option  th:value="${rol.userRolId}"
-                                                th:text="${rol.roleName}"/>
-                                    </select>
-                                </div>
-
-
-                                <input for="userRolId" type="hidden" name="userRolId" th:each="rol:${user_role}" value="2" th:value="${rol.UserRolId}" th:field="*{userRoleId}"/>-->
-
                                 <div class="single-form d-sm-flex justify-content-between">
                                     <div class="form-checkbox">
                                         <input id="checkbox2" name="checkbox2" type="checkbox"/>

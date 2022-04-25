@@ -23,11 +23,6 @@ public class userController {
         return "userManagement/userSignUp";
     }
 
-    @GetMapping("/login")
-    public String loginPage() {
-        return "userManagement/loginPage";
-    }
-
     @PostMapping(path = "RegisterUser")
     public String register(@RequestBody RegistrationRequest request) {
         return registrationService.register(request);
