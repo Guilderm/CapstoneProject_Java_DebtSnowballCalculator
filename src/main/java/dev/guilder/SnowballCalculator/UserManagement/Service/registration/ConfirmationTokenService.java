@@ -1,4 +1,4 @@
-package dev.guilder.SnowballCalculator.UserManagement.Service.registration;
+package dev.guilder.SnowballCalculator.UserManagement.Service.Registration;
 
 
 import dev.guilder.SnowballCalculator.UserManagement.Entitys.ConfirmationToken;
