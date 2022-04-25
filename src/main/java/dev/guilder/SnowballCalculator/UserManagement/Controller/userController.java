@@ -1,6 +1,6 @@
 package dev.guilder.SnowballCalculator.UserManagement.Controller;
 
-import dev.guilder.SnowballCalculator.UserManagement.Repository.RegistrationRequest;
+import dev.guilder.SnowballCalculator.UserManagement.Repository.newUser;
 import dev.guilder.SnowballCalculator.UserManagement.Service.Registration.RegistrationService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -24,7 +24,7 @@ public class userController {
     }
 
     @PostMapping(path = "RegisterUser")
-    public String register(@RequestBody RegistrationRequest request) {
+    public String register(@RequestBody newUser request) {
         return registrationService.register(request);
     }
 

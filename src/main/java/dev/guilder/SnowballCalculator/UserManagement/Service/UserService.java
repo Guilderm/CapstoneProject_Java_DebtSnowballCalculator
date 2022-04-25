@@ -1,15 +1,15 @@
 package dev.guilder.SnowballCalculator.UserManagement.Service;
 
-import dev.guilder.SnowballCalculator.UserManagement.Entitys.AppUser;
+import dev.guilder.SnowballCalculator.UserManagement.Entitys.AppUsers;
 
 import java.util.List;
 
 public interface UserService {
-    List<AppUser> getAllUsers();
+    List<AppUsers> getAllUsers();
 
-    void saveUser(AppUser appUser);
+    void saveUser(AppUsers appUsers);
 
-    AppUser getUserById(long id);
+    AppUsers getUserById(long id);
 
     void deleteUser(long id);
     //public User findUserByName(String firstName);

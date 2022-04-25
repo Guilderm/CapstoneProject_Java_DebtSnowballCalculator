@@ -19,7 +19,7 @@
                             Register for an Account
                         </p>
                         <div class="sing-in-form-wrapper form-style-one">
-                            <form method="post" th:action="@{/saveUser}" th:object="${newUser}">
+                            <form method="post" th:action="@{/userRegistration}" th:object="${userRegistrationForm}">
                                 <div class="form-input">
                                     <input for="id" name="idUser" th:field="*{id}" type="hidden"/>
 

@@ -1,9 +1,9 @@
 package dev.guilder.SnowballCalculator.UserManagement.Service.Registration;
 
-import dev.guilder.SnowballCalculator.UserManagement.Entitys.AppUser;
 import dev.guilder.SnowballCalculator.UserManagement.Entitys.AppUserRole;
+import dev.guilder.SnowballCalculator.UserManagement.Entitys.AppUsers;
 import dev.guilder.SnowballCalculator.UserManagement.Entitys.ConfirmationToken;
-import dev.guilder.SnowballCalculator.UserManagement.Repository.RegistrationRequest;
+import dev.guilder.SnowballCalculator.UserManagement.Repository.newUser;
 import dev.guilder.SnowballCalculator.UserManagement.Service.AppUserService;
 import dev.guilder.SnowballCalculator.Utilities.EMail.EmailSender;
 import lombok.AllArgsConstructor;
@@ -21,7 +21,7 @@ public class RegistrationService {
     private final ConfirmationTokenService confirmationTokenService;
     private final EmailSender emailSender;
 
-    public String register(RegistrationRequest request) {
+    public String register(newUser request) {
         boolean isValidEmail = emailValidator.
                 test(request.getEmail());
 
@@ -30,7 +30,7 @@ public class RegistrationService {
         }
 
         String token = appUserService.signUpUser(
-                new AppUser(
+                new AppUsers(
                         request.getFirstName(),
                         request.getLastName(),
                         request.getEmail(),
@@ -66,7 +66,7 @@ public class RegistrationService {
 
         confirmationTokenService.setConfirmedAt(token);
         appUserService.enableAppUser(
-                confirmationToken.getAppUser().getEmail());
+                confirmationToken.getAppUsers().getEmail());
         return "confirmed";
     }
 

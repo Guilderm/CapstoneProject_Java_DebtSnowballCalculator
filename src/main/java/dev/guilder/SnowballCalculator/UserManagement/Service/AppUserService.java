@@ -1,6 +1,6 @@
 package dev.guilder.SnowballCalculator.UserManagement.Service;
 
-import dev.guilder.SnowballCalculator.UserManagement.Entitys.AppUser;
+import dev.guilder.SnowballCalculator.UserManagement.Entitys.AppUsers;
 import dev.guilder.SnowballCalculator.UserManagement.Entitys.ConfirmationToken;
 import dev.guilder.SnowballCalculator.UserManagement.Repository.AppUserRepository;
 import dev.guilder.SnowballCalculator.UserManagement.Service.Registration.ConfirmationTokenService;
@@ -36,9 +36,9 @@ public class AppUserService implements UserDetailsService, UserService {
                                 String.format(USER_NOT_FOUND_MSG, email)));
     }
 
-    public String signUpUser(AppUser appUser) {
+    public String signUpUser(AppUsers appUsers) {
         boolean userExists = appUserRepository
-                .findByEmail(appUser.getEmail())
+                .findByEmail(appUsers.getEmail())
                 .isPresent();
 
         if (userExists) {
@@ -49,11 +49,11 @@ public class AppUserService implements UserDetailsService, UserService {
         }
 
         String encodedPassword = bCryptPasswordEncoder
-                .encode(appUser.getPassword());
+                .encode(appUsers.getPassword());
 
-        appUser.setPassword(encodedPassword);
+        appUsers.setPassword(encodedPassword);
 
-        appUserRepository.save(appUser);
+        appUserRepository.save(appUsers);
 
         String token = UUID.randomUUID().toString();
 
@@ -61,7 +61,7 @@ public class AppUserService implements UserDetailsService, UserService {
                 token,
                 LocalDateTime.now(),
                 LocalDateTime.now().plusMinutes(15),
-                appUser
+                appUsers
         );
 
         confirmationTokenService.saveConfirmationToken(
@@ -78,18 +78,18 @@ public class AppUserService implements UserDetailsService, UserService {
 
     @Override
     @Transactional(readOnly = true)
-    public List<AppUser> getAllUsers() {
-        return (List<AppUser>) appUserRepository.findAll();
+    public List<AppUsers> getAllUsers() {
+        return (List<AppUsers>) appUserRepository.findAll();
     }
 
     @Transactional
-    public void saveUser(AppUser appUser) {
-        appUserRepository.save(appUser);
+    public void saveUser(AppUsers appUsers) {
+        appUserRepository.save(appUsers);
     }
 
     @Override
     @Transactional(readOnly = true)
-    public AppUser getUserById(long id) {
+    public AppUsers getUserById(long id) {
         return appUserRepository.findById(id).orElse(null);
     }
 
