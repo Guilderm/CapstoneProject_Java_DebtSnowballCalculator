@@ -1,30 +1,30 @@
 <!DOCTYPE html>
 <html lang="en" layout:decorate="~{globalComponents/layout}"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
-    <head>
-        <link rel="stylesheet" th:href="@{CSS/error404.css}">
-        <title>Error 404</title>
-    </head>
-    <body>
-        <div layout:fragment="content">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-xxl-7 col-xl-8 col-lg-8">
-                        <div class="error-content text-center">
-                            <span class="error-404">404</span>
-                            <h5 class="sub-title">Page Not Found</h5>
-                            <p class="text">
-                                Ooopps.! The Page you were looking for, couldn't be found.
-                            </p>
-                        </div>
-                        <!-- error content -->
-                    </div>
+<head>
+    <link rel="stylesheet" th:href="@{CSS/error404.css}">
+    <title>Error 404</title>
+</head>
+<body>
+<div layout:fragment="content">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xxl-7 col-xl-8 col-lg-8">
+                <div class="error-content text-center">
+                    <span class="error-404">404</span>
+                    <h5 class="sub-title">Page Not Found</h5>
+                    <p class="text">
+                        Ooopps.! The Page you were looking for, couldn't be found.
+                    </p>
                 </div>
-                <!-- row -->
+                <!-- error content -->
             </div>
-            <!-- container -->
-        </section>
+        </div>
+        <!-- row -->
     </div>
+    <!-- container -->
+    </section>
+</div>
 </div>
 </body>
 </html>

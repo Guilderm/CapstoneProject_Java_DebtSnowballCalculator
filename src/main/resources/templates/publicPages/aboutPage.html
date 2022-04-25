@@ -1,83 +1,83 @@
 <!DOCTYPE html>
 <html lang="en" layout:decorate="~{globalComponents/layout}"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
-    <head>
-        <title>[[#{navbar.about}]]</title>
-        </head>
-    <body class="stretched">
-        <div class="text-center" layout:fragment="content">
-            <img alt="Logo U Fidélitas" src="/images/FidelitasLogo.png">
-            <h1>Capstone Project</h1>
-            <br>
-            <p th:text="#{about.paragraphone}">This project contains the follow along code for this class.</p>
-            <p><b th:text="#{about.paragraphtwo}">Professor:</b> KENNETH JEANPOL ALVARADO MENDEZ</p>
-            <p><b th:text="#{about.paragraphthree}">Class:</b> Desarrollo de Aplicaciones Web y Patrones (SC-403)</p>
-            <p><b th:text="#{about.paragraphfour}">Topic Project Description:</b></p>
-            <p class="col-md-8 mx-auto" th:text="#{about.paragraphfive}">Snowball Finance is a fictitious financial 
-                company created for the final project of the "Desarrollo de Aplicaciones 
-                Web y Patrones" Course that provides financial advisory services for 
-                debt management and cancellation, based on he "Snowball" methodology. 
-                It allows the user, through subscription plans, to obtain tips with 
-                experts in the field that will guide the debtor through the best path 
-                to get out of their pending accounts.</p>
-            </br>
-            <div id="wrapper" class="clearfix">
-            <section id="content">
-                <div class="content-wrap min-vh-95 d-flex align-items-center">
-		<div class="container clearfix">
+<head>
+    <title>[[#{navbar.about}]]</title>
+</head>
+<body class="stretched">
+<div class="text-center" layout:fragment="content">
+    <img alt="Logo U Fidélitas" src="/images/FidelitasLogo.png">
+    <h1>Capstone Project</h1>
+    <br>
+    <p th:text="#{about.paragraphone}">This project contains the follow along code for this class.</p>
+    <p><b th:text="#{about.paragraphtwo}">Professor:</b> KENNETH JEANPOL ALVARADO MENDEZ</p>
+    <p><b th:text="#{about.paragraphthree}">Class:</b> Desarrollo de Aplicaciones Web y Patrones (SC-403)</p>
+    <p><b th:text="#{about.paragraphfour}">Topic Project Description:</b></p>
+    <p class="col-md-8 mx-auto" th:text="#{about.paragraphfive}">Snowball Finance is a fictitious financial
+        company created for the final project of the "Desarrollo de Aplicaciones
+        Web y Patrones" Course that provides financial advisory services for
+        debt management and cancellation, based on he "Snowball" methodology.
+        It allows the user, through subscription plans, to obtain tips with
+        experts in the field that will guide the debtor through the best path
+        to get out of their pending accounts.</p>
+    </br>
+    <div class="clearfix" id="wrapper">
+        <section id="content">
+            <div class="content-wrap min-vh-95 d-flex align-items-center">
+                <div class="container clearfix">
                     <div class="row justify-content-center mb-5">
-			<div class="col-xl-6 col-lg-8 text-center">
+                        <div class="col-xl-6 col-lg-8 text-center">
                             <h3 class="h1 fw-bold mb-3" th:text="#{about.title}">Team Members</h3>
-			</div>
+                        </div>
                     </div>
                     <div class="row justify-content-center gutter-50 col-mb-30">
                         <div class="col-lg-4">
                             <div class="d-flex align-items-center p-3 border border-default bg-light rounded-3">
-				<img src="images/AngeloTeamContributor.png" 
-                                     alt="Author" class="rounded-circle me-3" 
-                                     width="64" height="64">
-                                    <div>
-					<h4 class="mb-0">Angelo Sotomayor Vargas</h4>
-                                        <h5 class="text-muted mb-0 fw-normal" th:text="#{about.titletwo}">
-                                            Team Contributor
-                                        </h5>
-                                    </div>
+                                <img alt="Author"
+                                     class="rounded-circle me-3" height="64"
+                                     src="images/AngeloTeamContributor.png" width="64">
+                                <div>
+                                    <h4 class="mb-0">Angelo Sotomayor Vargas</h4>
+                                    <h5 class="text-muted mb-0 fw-normal" th:text="#{about.titletwo}">
+                                        Team Contributor
+                                    </h5>
+                                </div>
                             </div>
-			</div>
+                        </div>
                         <div class="col-lg-4">
                             <div class="d-flex align-items-center p-3 border 
                                  border-default bg-light rounded-3">
-				<img src="images/GuilderTeamContributor.jpeg" 
-                                     alt="Author" class="rounded-circle me-3" 
-                                     width="64" height="64">
-                                    <div>
-					<h4 class="mb-0">Guilder W. Milliner</h4>
-                                        <h5 class="text-muted mb-0 fw-normal" th:text="#{about.titlethree}">
-                                            Team Leader
-                                        </h5>
-                                    </div>
+                                <img alt="Author"
+                                     class="rounded-circle me-3" height="64"
+                                     src="images/GuilderTeamContributor.jpeg" width="64">
+                                <div>
+                                    <h4 class="mb-0">Guilder W. Milliner</h4>
+                                    <h5 class="text-muted mb-0 fw-normal" th:text="#{about.titlethree}">
+                                        Team Leader
+                                    </h5>
+                                </div>
                             </div>
-			</div>
+                        </div>
                         <div class="col-lg-4">
                             <div class="d-flex align-items-center p-3 border 
                                  border-default bg-light rounded-3">
-				<img src="images/GlenmarkTeamContributor.jpeg" 
-                                     alt="Author" class="rounded-circle me-3" 
-                                     width="64" height="64">
-                                    <div>
-					<h4 class="mb-0">Glennmar Milliner Whitaker</h4>
-                                        <h5 class="text-muted mb-0 fw-normal" th:text="#{about.titlefour}">
-                                            Team Contributor
-                                        </h5>
-                                    </div>
+                                <img alt="Author"
+                                     class="rounded-circle me-3" height="64"
+                                     src="images/GlenmarkTeamContributor.jpeg" width="64">
+                                <div>
+                                    <h4 class="mb-0">Glennmar Milliner Whitaker</h4>
+                                    <h5 class="text-muted mb-0 fw-normal" th:text="#{about.titlefour}">
+                                        Team Contributor
+                                    </h5>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
-                </br></br>
             </div>
-        </div>
-    </body>
+        </section>
+        </br></br>
+    </div>
+</div>
+</body>
 </html>

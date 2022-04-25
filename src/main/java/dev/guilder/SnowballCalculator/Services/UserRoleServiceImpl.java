@@ -1,31 +1,31 @@
-
 package dev.guilder.SnowballCalculator.Services;
 
 import dev.guilder.SnowballCalculator.Entitys.UserRole;
 import dev.guilder.SnowballCalculator.Repository.UserRoleRepository;
-import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
-public class UserRoleServiceImpl implements UserRoleService{
+public class UserRoleServiceImpl implements UserRoleService {
 
     @Autowired
     private UserRoleRepository userRoleRepository;
-    
+
     @Override
-    @Transactional (readOnly = true)
+    @Transactional(readOnly = true)
     public List<UserRole> getAllUsersRole() {
-        return (List<UserRole>)userRoleRepository.findAll();
+        return (List<UserRole>) userRoleRepository.findAll();
     }
-    
+
     @Override
-    @Transactional (readOnly = true)
+    @Transactional(readOnly = true)
     public UserRole getUserRoleById(long userRoleId) {
         return userRoleRepository.findById(userRoleId).orElse(null);
     }
-    
+
     @Override
     @Transactional
     public void saveRole(UserRole userRole) {

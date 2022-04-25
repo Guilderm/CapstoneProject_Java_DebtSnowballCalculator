@@ -6,10 +6,10 @@ import dev.guilder.SnowballCalculator.UserManagement.Entitys.ConfirmationToken;
 import dev.guilder.SnowballCalculator.UserManagement.Repository.RegistrationRequest;
 import dev.guilder.SnowballCalculator.UserManagement.Service.AppUserService;
 import dev.guilder.SnowballCalculator.Utilities.EMail.EmailSender;
-import dev.guilder.SnowballCalculator.UserManagement.Service.registration.ConfirmationTokenService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
 import java.time.LocalDateTime;
 
 @Service

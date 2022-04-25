@@ -1,21 +1,21 @@
-
 package dev.guilder.SnowballCalculator.Services;
 
 import dev.guilder.SnowballCalculator.Entitys.Users;
 import dev.guilder.SnowballCalculator.Repository.UserRepository;
-import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
-public class UserServiceImpl implements UserService{
+public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserRepository userRepositoryTMP;
-    
+
     @Override
-    @Transactional (readOnly = true)
+    @Transactional(readOnly = true)
     public List<Users> getAllUsers() {
         return (List<Users>) userRepositoryTMP.findAll();
     }
@@ -27,7 +27,7 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    @Transactional (readOnly = true)
+    @Transactional(readOnly = true)
     public Users getUserById(long id) {
         return userRepositoryTMP.findById(id).orElse(null);
     }

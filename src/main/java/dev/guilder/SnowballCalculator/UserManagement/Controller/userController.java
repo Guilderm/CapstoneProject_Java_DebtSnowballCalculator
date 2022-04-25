@@ -24,7 +24,8 @@ public class userController {
     }
 
     @GetMapping("/login")
-    public String loginPage(){ return "userManagement/loginPage";
+    public String loginPage() {
+        return "userManagement/loginPage";
     }
 
     @PostMapping(path = "RegisterUser")
