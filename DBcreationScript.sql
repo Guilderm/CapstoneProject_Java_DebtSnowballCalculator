@@ -1,8 +1,8 @@
 CREATE
-DATABASE ITicket;
+    DATABASE ITicket;
 
 USE
-ITicket;
+    ITicket;
 
 CREATE TABLE `Event`
 (
@@ -19,8 +19,8 @@ CREATE TABLE `Event`
 
 CREATE TABLE `Location`
 (
-    `LocationID`       int NOT NULL,
-    `MaximumOccupancy` int NOT NULL,
+    `LocationID`       int         NOT NULL,
+    `MaximumOccupancy` int         NOT NULL,
     `Address`          VARCHAR(50) NULL,
     PRIMARY KEY (
                  `LocationID`
