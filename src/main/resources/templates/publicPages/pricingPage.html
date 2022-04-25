@@ -30,7 +30,8 @@
                             <i class="lni lni-handshake"></i>
                         </div>
                         <div class="pricing-header text-center">
-                            <h5 class="sub-title" th:text="#{pricing.planbasictitle}">Education<p class="month" th:text="#{pricing.planbasicsubtitle}">Basic<p></h5>
+                            <h5 class="sub-title" th:text="#{pricing.planbasictitle}">Education</h5>
+                            <p class="month" th:text="#{pricing.planbasicsubtitle}">Basic</p>
                         <div>
                             <p th:text="#{pricing.planbasicparagraph}">Learn to better manage your money quickly and easily.</p>
                         </div>
@@ -60,17 +61,17 @@
                             </a>
                         </div>
                     </div>
-                    <!-- pricing style one -->
+                    <!-- pricing style one 
                     <form th:action="@{/addCart}" method="post" th:object="${newItem}">
-                        <input type="hidden" name="idProduct" th:value="*{1}"/>
+                        <input type="hidden" name="idProduct" id="productId" th:value="*{1}"/>
                         </div>
                                     <div class="single-form standard-buttons">
                                         <button type="submit" class="btn primary-btn square">
                                             Add to Cart
                                         </button>
                                     </div>
-                                    <!-- single-form -->
                     </form>
+                    -->
                 </div>
                 <div class="col-lg-4 col-md-7 col-sm-9">
                     <div class="pricing-style-eight">
@@ -78,7 +79,8 @@
                             <i class="lni lni-investment"></i>
                         </div>
                         <div class="pricing-header text-center">
-                            <h5 class="sub-title" th:text="#{pricing.planmediumtitle}">Encouragement<p class="month" th:text="#{pricing.planmediumsubtitle}">Medium<p></h5>
+                            <h5 class="sub-title" th:text="#{pricing.planmediumtitle}">Encouragement</h5>
+                            <p class="month" th:text="#{pricing.planmediumsubtitle}">Medium</p>
                         <div>
                             <p th:text="#{pricing.planmediumparagraph}">Build momentum with small wins along the way.</p>
                         </div>
@@ -117,7 +119,8 @@
                             <i class="lni lni-invest-monitor"></i>
                         </div>
                         <div class="pricing-header text-center">
-                            <h5 class="sub-title" th:text="#{pricing.planprotitle}">Empowerment<p class="month">PRO<p></h5>
+                            <h5 class="sub-title" th:text="#{pricing.planprotitle}">Empowerment</h5>
+                            <p class="month">PRO</p>
                             <div>
                             <p th:text="#{pricing.planproparagraph}">Make financial decisions with confidence in every aspect of your life.</p>
                             </div>

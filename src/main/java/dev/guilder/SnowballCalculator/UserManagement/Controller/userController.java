@@ -25,11 +25,6 @@ public class userController {
         return "userManagement/userSignUp";
     }
 
-    @GetMapping("/shoppingCart")
-    public String shoppingCartPage() {
-        return "userManagement/shoppingCartPage";
-    }
-
     @PostMapping(path = "RegisterUser")
     public String register(@RequestBody RegistrationRequest request) {
         return registrationService.register(request);

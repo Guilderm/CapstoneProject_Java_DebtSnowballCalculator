@@ -37,11 +37,11 @@ public class userManagement {
         return "redirect:/adminDashboard";
     }
     
-    @GetMapping("/modifyUser/{id}")
-    public String modifyUser(@PathVariable("id") Long idUser, Model model){
+    @GetMapping("/changeUser/{id}")
+    public String changeUser(@PathVariable("id") Long idUser, Model model){
         User user = userService.getUserById(idUser);
         model.addAttribute("alterUser", user);
-        return "siteManagement/modifyUser";
+        return "userManagement/modifyUserPage";
     }
     
     @GetMapping("/login")

@@ -834,6 +834,30 @@ p {
     color: var(--dark-3);
 }
 
+.navbar-style-eight .navbar-icon {
+    height: 50px;
+    width: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 30px;
+    background-color: var(--primary);
+    color: var(--white);
+    display: inline-block;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    -webkit-transition: all 0.3s ease-out 0s;
+    -moz-transition: all 0.3s ease-out 0s;
+    -ms-transition: all 0.3s ease-out 0s;
+    -o-transition: all 0.3s ease-out 0s;
+    transition: all 0.3s ease-out 0s;
+}
+
+.navbar-style-eight:hover .navbar-icon {
+    border-color: var(--primary);
+    background-color: transparent;
+    color: var(--primary);
+}
+
 
 
 

@@ -17,6 +17,7 @@ public class Product implements Serializable{
     private long productId;
     private String name;
     private String description;
+    private String level;
     private double price;
 
     public long getProductId() {
@@ -49,5 +50,13 @@ public class Product implements Serializable{
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    public String getLevel() {
+        return level;
+    }
+
+    public void setLevel(String level) {
+        this.level = level;
     }
 }
