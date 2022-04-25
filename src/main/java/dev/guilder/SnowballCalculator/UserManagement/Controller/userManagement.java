@@ -48,7 +48,7 @@ public class userManagement {
 
     @GetMapping("/login")
     public String loginPage() {
-        return "userManagement/loginPageTMP";
+        return "userManagement/loginPage";
     }
 
 }
