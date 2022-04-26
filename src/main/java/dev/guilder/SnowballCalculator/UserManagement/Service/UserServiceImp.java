@@ -2,6 +2,7 @@ package dev.guilder.SnowballCalculator.UserManagement.Service;
 
 import dev.guilder.SnowballCalculator.UserManagement.Entitys.AppUser;
 import dev.guilder.SnowballCalculator.UserManagement.Entitys.ConfirmationToken;
+import dev.guilder.SnowballCalculator.UserManagement.Entitys.UserRole;
 import dev.guilder.SnowballCalculator.UserManagement.Repository.AppUserRepository;
 import dev.guilder.SnowballCalculator.UserManagement.Service.Registration.ConfirmationTokenService;
 import lombok.AllArgsConstructor;
@@ -83,8 +84,10 @@ public class UserServiceImp implements UserDetailsService, UserService {
     }
 
     @Transactional
-    public void saveUser(AppUser appUser) {
-        appUserRepository.save(appUser);
+    public void registerUser(AppUser registrationRequest) {
+        registrationRequest.setPassword(bCryptPasswordEncoder.encode(registrationRequest.getPassword()));
+        registrationRequest.setUserRole(UserRole.USER);
+        appUserRepository.save(registrationRequest);
     }
 
     @Override

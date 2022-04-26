@@ -27,7 +27,7 @@ public class userManagement {
 
         //Todo: Validate registrationRequest
 
-        userService.saveUser(registrationRequest);
+        userService.registerUser(registrationRequest);
 
         return "redirect:/Home";
     }

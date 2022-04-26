@@ -7,7 +7,7 @@ import java.util.List;
 public interface UserService {
     List<AppUser> getAllUsers();
 
-    void saveUser(AppUser appUser);
+    void registerUser(AppUser appUser);
 
     AppUser getUserById(long id);
 
