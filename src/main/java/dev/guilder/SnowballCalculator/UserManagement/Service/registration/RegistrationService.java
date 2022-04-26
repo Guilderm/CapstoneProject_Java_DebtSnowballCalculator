@@ -1,8 +1,8 @@
 package dev.guilder.SnowballCalculator.UserManagement.Service.Registration;
 
 import dev.guilder.SnowballCalculator.UserManagement.Entitys.AppUser;
-import dev.guilder.SnowballCalculator.UserManagement.Entitys.UserRole;
 import dev.guilder.SnowballCalculator.UserManagement.Entitys.ConfirmationToken;
+import dev.guilder.SnowballCalculator.UserManagement.Entitys.UserRole;
 import dev.guilder.SnowballCalculator.UserManagement.Repository.newUser;
 import dev.guilder.SnowballCalculator.UserManagement.Service.UserServiceImp;
 import dev.guilder.SnowballCalculator.Utilities.EMail.EmailSender;
