@@ -85,8 +85,13 @@ public class UserServiceImp implements UserDetailsService, UserService {
 
     @Transactional
     public void registerUser(AppUser registrationRequest) {
+
         registrationRequest.setPassword(bCryptPasswordEncoder.encode(registrationRequest.getPassword()));
         registrationRequest.setUserRole(UserRole.USER);
+
+        //Todo: setup a email validation process
+        registrationRequest.setEnabled(Boolean.TRUE);
+
         appUserRepository.save(registrationRequest);
     }
 

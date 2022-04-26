@@ -15,7 +15,6 @@ public class userManagement {
     @Autowired
     private UserService userService;
 
-
     @GetMapping("/userRegistration")
     public String userSignUpPage(Model model) {
         model.addAttribute("userRegistrationForm", new AppUser());
