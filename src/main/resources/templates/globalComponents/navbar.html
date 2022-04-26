@@ -2,7 +2,6 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
     <body>
         <nav class="nav-container" th:fragment="navbar">
-            <!--====== NAVBAR START ======-->
             <section class="navbar-area navbar-two">
                 <div class="container">
                     <div class="row">
@@ -24,10 +23,10 @@
                                 <div class="navbar-btn d-none d-sm-inline-block">
                                     <ul>
                                         <li><a class="btn primary-btn square" th:href="@{/profile}"> USER </a></li>
-                                        <li><a class="btn primary-btn square" th:href="@{/adminDashboard}"> ADMIN </a></li>
-                                        <li><a class="btn primary-btn-outline square" th:href="@{/login}"
+                                        <li><a class="btn primary-btn-outline" th:href="@{/adminDashboard}"> ADMIN </a></li>
+                                        <li><a class="btn primary-btn square" th:href="@{/login}"
                                                th:text="#{navbar.signin}"> Sign In </a></li>
-                                        <li><a class="btn primary-btn square" th:href="@{/userRegistration}"
+                                        <li><a class="btn primary-btn-outline" th:href="@{/userRegistration}"
                                                th:text="#{navbar.signup}"> Sign Up </a></li>
                                         <li><a class="btn primary-btn  btn-primary" th:href="@{/shoppingCart}"><i class="lni lni-cart"></i></a></li>
                                     </ul>

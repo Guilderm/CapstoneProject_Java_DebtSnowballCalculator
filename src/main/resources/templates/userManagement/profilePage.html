@@ -1,273 +1,225 @@
 <!DOCTYPE html>
 <html lang="en" layout:decorate="~{globalComponents/layout}"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
-<head><title>Profile</title></head>
-<body>
-
-<div layout:fragment="content">
-
-
-    <div class="main-container">-
-        <section class="bg--secondary space--sm">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-4">
-                        <div class="boxed boxed--lg boxed--border">
-                            <div class="text-block text-center">
-                                <img alt="avatar" class="image--sm" src="img/avatar-round-3.png"/>
-                                <span class="h5">Lucas Banks</span>
-                                <span>Pro Account</span>
-                                <span class="label">Pro</span>
-                            </div>
-                            <hr>
-                            <div class="text-block">
-                                <ul class="menu-vertical">
-                                    <li>
-                                        <a data-toggle-class=".account-tab:not(.hidden);hidden|#account-profile;hidden"
-                                           href="#">Profile</a>
-                                    </li>
-                                    <li>
-                                        <a data-toggle-class=".account-tab:not(.hidden);hidden|#account-notifications;hidden"
-                                           href="#">Email
-                                            Notifications</a>
-                                    </li>
-                                    <li>
-                                        <a data-toggle-class=".account-tab:not(.hidden);hidden|#account-billing;hidden"
-                                           href="#">Billing
-                                            Details</a>
-                                    </li>
-                                    <li>
-                                        <a data-toggle-class=".account-tab:not(.hidden);hidden|#account-password;hidden"
-                                           href="#">Password</a>
-                                    </li>
-                                    <li>
-                                        <a data-toggle-class=".account-tab:not(.hidden);hidden|#account-delete;hidden"
-                                           href="#">Delete
-                                            Account</a>
-                                    </li>
-                                </ul>
+    <head>
+        <link rel="stylesheet" th:href="@{CSS/profilePage.css}">
+        <title>Profile</title>
+    </head>
+    <body>
+        <div layout:fragment="content">
+            <div class="profile profile-two">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="cover-image"></div>
+                            <div class="pf-content">
+                                <div class="pf-img-des">
+                                    <div class="image">
+                                        <img
+                                            src="/images/blanckuser.jpg" alt=""/>
+                                    </div>
+                                    <div class="des">
+                                        <h5>User</h5>
+                                        <p>
+                                            You can see your personal information and update your data if you wish, in addition you can also see a status of your current subscriptions:
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-8">
-                        <div class="boxed boxed--lg boxed--border">
-                            <div class="account-tab" id="account-profile">
-                                <h4>Profile</h4>
-                                <form>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <label>Real Name:</label>
-                                            <input name="name" type="text" value="Lucas Banks"/>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <label>Display Name:</label>
-                                            <input name="display-name" type="text" value="l_banks"/>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <label>Email Address:</label>
-                                            <input name="email" type="email" value="l_banks@stack.net"/>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <label>Location:</label>
-                                            <input name="location" type="text" value="Melbourne"/>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <label>Website:</label>
-                                            <input name="website" type="text" value="http://mrare.co"/>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <label>Bio:</label>
-                                            <textarea name="bio" rows="4"></textarea>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="input-checkbox input-checkbox--switch">
-                                                <input name="public-profile" type="checkbox"/>
-                                                <label></label>
+                </div>
+            </div>
+            <section id="features" class="features-area features-eleven contact-area">
+                <div class="container">
+                    <div class="tab-head">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="nav-head">
+                                    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                                        <li class="nav-item" role="presentation">
+                                            <a class="nav-link active" id="email-marketing-tab" data-bs-toggle="pill" href="#email-marketing" role="tab"
+                                               aria-controls="email-marketing" aria-selected="true">
+                                                <i class="lni lni-envelope"></i> Personal Information
+                                            </a>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <a class="nav-link" id="user-analytics-tab" data-bs-toggle="pill" href="#user-analytics" role="tab"
+                                               aria-controls="user-analytics" aria-selected="false">
+                                                <i class="lni lni-bar-chart"></i> Your Suscriptions
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="tab-content" id="pills-tabContent">
+                                    <div class="tab-pane fade show active" id="email-marketing" role="tabpanel" aria-labelledby="email-marketing-tab">
+                                        <div class="tab-content-inner">
+                                            <div class="row align-items-center">
+                                                <div class="col-md-8 mx-auto">
+                                                    <div class="tab-text">
+                                                        <div class="container">
+                                                            <div class="row">
+                                                                <div class="section-title mt-45">
+                                                                    <h3 class="title text-center">Update Info</h3>
+                                                                </div>
+                                                                <div class="contact-form form-style-four mt-15">
+                                                                    <form action="#">
+                                                                        <div class="row">
+                                                                            <div class="col-md-6">
+                                                                                <div class="form-input mt-15">
+                                                                                    <label>First Name</label>
+                                                                                    <div class="input-items default">
+                                                                                        <i class="lni lni-user"></i>
+                                                                                        <input type="text" placeholder="First Name" />
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-md-6">
+                                                                                <div class="form-input mt-15">
+                                                                                    <label>Last Name</label>
+                                                                                    <div class="input-items default">
+                                                                                        <i class="lni lni-user"></i>
+                                                                                        <input type="text" placeholder="Last Name" />
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-md-6">
+                                                                                <div class="form-input mt-15">
+                                                                                    <label>Email Address</label>
+                                                                                    <div class="input-items default">
+                                                                                        <i class="lni lni-envelope"></i>
+                                                                                        <input type="text" placeholder="admin@uideck.com" />
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-md-6">
+                                                                                <div class="form-input mt-15">
+                                                                                    <label>Password</label>
+                                                                                    <div class="input-items default">
+                                                                                        <i class="lni lni-key"></i>
+                                                                                        <input type="password" placeholder="********" />
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="align-items-center">
+                                                                                <div class="single-form mt-15">
+                                                                                    <div class="input-form rounded-buttons">
+                                                                                        <button
+                                                                                            class="btn primary-btn rounded-full"
+                                                                                            type="submit"
+                                                                                            >
+                                                                                            UPDATE INFO
+                                                                                        </button>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <span>Allow my profile to be viewable by guests</span>
-                                        </div>
-                                        <div class="col-lg-3 col-md-4">
-                                            <button class="btn btn--primary type--uppercase" type="submit">Save
-                                                Profile
-                                            </button>
                                         </div>
                                     </div>
-                                </form>
+                                    <div class="tab-pane fade" id="user-analytics" role="tabpanel" aria-labelledby="user-analytics-tab">
+                                        <div class="tab-content-inner">
+                                            <div class="row align-items-center">
+                                                <div class="col-md-8 mx-auto">
+                                                    <div class="tab-text">
+                                                        <!--====== CHECKOUT PART TWO START ======-->
+                                                        <section class="checkout-area checkout-two">
+                                                            <div class="container">
+                                                                <div class="row">
+                                                                    <div>
+                                                                        <div class="product-details">
+                                                                            <h3 class="product-title">
+                                                                                Your Finance Plan
+                                                                            </h3>
+                                                                            <div class="des">
+                                                                                <p>
+                                                                                    With your suscription you'll learn to build habits that keep you motivated and on track with your money goals.
+                                                                                </p>
+                                                                            </div>
+                                                                            <div class="price-variations">
+                                                                                <div class="form-check">
+                                                                                    <input
+                                                                                        class="form-check-input"
+                                                                                        type="checkbox"
+                                                                                        value=""
+                                                                                        id="flexCheckDefault1"
+                                                                                        />
+                                                                                    <label class="form-check-label" for="flexCheckDefault1">
+                                                                                        <span class="title">Education</span>
+                                                                                        <span class="description"
+                                                                                              >Learn to better manage your money quickly and easily.</span
+                                                                                        >
+                                                                                        <span class="price">$19.99</span>
+                                                                                    </label>
+                                                                                </div>
+                                                                                <div class="form-check">
+                                                                                    <input
+                                                                                        class="form-check-input"
+                                                                                        type="checkbox"
+                                                                                        value=""
+                                                                                        id="flexCheckDefault2"
+                                                                                        />
+                                                                                    <label class="form-check-label" for="flexCheckDefault2">
+                                                                                        <span class="title">Encouragement</span>
+                                                                                        <span class="description"
+                                                                                              >Build momentum with small wins along the way.</span
+                                                                                        >
+                                                                                        <span class="price">$59.99</span>
+                                                                                    </label>
+                                                                                </div>
+                                                                                <div class="form-check">
+                                                                                    <input
+                                                                                        class="form-check-input"
+                                                                                        type="checkbox"
+                                                                                        value=""
+                                                                                        id="flexCheckDefault3"
+                                                                                        />
+                                                                                    <label class="form-check-label" for="flexCheckDefault3">
+                                                                                        <span class="title">Empowerment</span>
+                                                                                        <span class="description"
+                                                                                              >Make financial decisions with confidence in every aspect of your life.</span
+                                                                                        >
+                                                                                        <span class="price">$129.99</span>
+                                                                                    </label>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <!-- container -->
+                                                        </section>
+                                                        <!--====== CHECKOUT PART TWO ENDS ======-->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="hidden account-tab" id="account-notifications">
-                                <h4>Email Notifications</h4>
-                                <p>Select the frequency with which you'd like to recieve product summary emails:</p>
-                                <form>
-                                    <div class="boxed bg--secondary boxed--border row">
-                                        <div class="col-4 text-center">
-                                            <div class="input-radio">
-                                                <span>Never</span>
-                                                <input class="validate-required" name="frequency" type="radio"
-                                                       value="never"/>
-                                                <label></label>
-                                            </div>
-                                        </div>
-                                        <div class="col-4 text-center">
-                                            <div class="input-radio checked">
-                                                <span>Weekly</span>
-                                                <input class="validate-required" name="frequency" type="radio"
-                                                       value="weekly"/>
-                                                <label></label>
-                                            </div>
-                                        </div>
-                                        <div class="col-4 text-center">
-                                            <div class="input-radio">
-                                                <span>Monthly</span>
-                                                <input class="validate-required" name="frequency" type="radio"
-                                                       value="monthly"/>
-                                                <label></label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-4 col-md-5">
-                                            <button class="btn btn--primary type--uppercase" type="submit">Save
-                                                Preferences
-                                            </button>
-                                        </div>
-                                    </div>
-                                    <!--end of row-->
-                                </form>
-                            </div>
-                            <div class="hidden account-tab" id="account-billing">
-                                <h4>Billing Details</h4>
-                                <div class="boxed boxed--border bg--secondary">
-                                    <h5>Payment Methods</h5>
-                                    <hr>
-                                    <form>
-                                        <ul>
-                                            <li class="row">
-                                                <div class="col-md-6">
-                                                    <p>
-                                                        <i class="material-icons">credit_card</i>
-                                                        <span> Mastercard ending in
-                                                                <strong>4722</strong>
-                                                            </span>
-                                                    </p>
-                                                </div>
-                                                <div class="col-md-3 text-right text-left-xs">
-                                                    <button class="btn bg--error" type="submit">Remove</button>
-                                                </div>
-                                                <div class="col-md-3 text-right text-left-xs">
-                                                    <button class="btn" type="submit">Edit</button>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                        <hr>
-                                        <button class="btn" type="submit">Add New Method</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-title-two">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="content">
+                                    <form method="POST" th:action="@{/logout}" style="display: inline">
+                                        <a href="#" onclick="this.parentNode.submit();"><span>Log Out</span></a>
                                     </form>
                                 </div>
                             </div>
-                            <div class="hidden account-tab" id="account-password">
-                                <h4>Password</h4>
-                                <p>Passwords must be at least 6 characters in length.</p>
-                                <form>
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <label>Old Password:</label>
-                                            <input name="old-password" type="password"/>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <label>New Password:</label>
-                                            <input name="new-password" type="password"/>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <label>Retype New Password:</label>
-                                            <input name="new-password-confirm" type="password"/>
-                                        </div>
-                                        <div class="col-lg-3 col-md-4">
-                                            <button class="btn btn--primary type--uppercase" type="submit">Save
-                                                Password
-                                            </button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                            <div class="hidden account-tab" id="account-delete">
-                                <h4>Delete Account</h4>
-                                <p>Permanently remove your account using the button below. Warning, this action is
-                                    permanent.</p>
-                                <form>
-                                    <button class="btn bg--error type--uppercase" type="submit">Delete Account</button>
-                                </form>
-                            </div>
                         </div>
                     </div>
                 </div>
-                <!--end of row-->
-            </div>
-            <!--end of container-->
-        </section>
-        <footer class="footer-3 text-center-xs space--xs ">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <img alt="Image" class="logo" src="img/logo-dark.png"/>
-                        <ul class="list-inline list--hover">
-                            <li class="list-inline-item">
-                                <a href="#">
-                                    <span class="type--fine-print">Get Started</span>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="#">
-                                    <span class="type--fine-print">help@stack.io</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-md-6 text-right text-center-xs">
-                        <ul class="social-list list-inline list--hover">
-                            <li class="list-inline-item">
-                                <a href="#">
-                                    <i class="socicon socicon-google icon icon--xs"></i>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="#">
-                                    <i class="socicon socicon-twitter icon icon--xs"></i>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="#">
-                                    <i class="socicon socicon-facebook icon icon--xs"></i>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="#">
-                                    <i class="socicon socicon-instagram icon icon--xs"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <!--end of row-->
-                <div class="row">
-                    <div class="col-md-6">
-                        <p class="type--fine-print">
-                            Supercharge your web workflow
-                        </p>
-                    </div>
-                    <div class="col-md-6 text-right text-center-xs">
-                            <span class="type--fine-print">&copy;
-                                <span class="update-year"></span> Stack Inc.</span>
-                        <a class="type--fine-print" href="#">Privacy Policy</a>
-                        <a class="type--fine-print" href="#">Legal</a>
-                    </div>
-                </div>
-                <!--end of row-->
-            </div>
-            <!--end of container-->
-        </footer>
-    </div>
-
-
-</div>
-
-</body>
+            </section>
+        </div>
+    </body>
 </html>

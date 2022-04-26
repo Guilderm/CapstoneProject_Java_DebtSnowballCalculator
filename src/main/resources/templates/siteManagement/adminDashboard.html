@@ -1,143 +1,153 @@
 <!DOCTYPE html>
 <html lang="en" layout:decorate="~{globalComponents/layout}"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
-<head>
-    <link rel="stylesheet" th:href="@{CSS/AdminDashboard.css}">
-    <title>Admin Dashboard</title></head>
-<body>
-<div layout:fragment="content">
-    <div class="tabs">
-        <div class="single-tabs tabs-one">
-            <ul class="nav nav-justified" id="myTab" role="tablist">
-                <li class="nav-item">
-                    <a aria-controls="tab-one-one" aria-selected="true" class="active" data-bs-toggle="tab"
-                       href="#tab-one-one"
-                       id="tab-one-one-tab" role="tab">CLIENTS</a>
-                </li>
-                <li class="nav-item">
-                    <a aria-controls="tab-one-two" aria-selected="false" data-bs-toggle="tab" href="#tab-one-two"
-                       id="tab-one-two-tab" role="tab">PRODUCTS</a>
-                </li>
-            </ul>
-            <div class="tab-content" id="myTabContent">
-                <div aria-labelledby="tab-one-one-tab" class="tab-pane fade show active" id="tab-one-one"
-                     role="tabpanel">
-                    <div class="tab-text">
-                        <section class="my-5">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-md-8 mx-auto">
-                                        <h3 class="h1 fw-bold mb-3 text-center" th:text="#{admindashboard.userstitle}">
-                                            Resgistered Users:</h3>
+    <head>
+        <link rel="stylesheet" th:href="@{CSS/AdminDashboard.css}">
+        <title>Admin Dashboard</title></head>
+    <body>
+        <div layout:fragment="content">
+            <div class="tabs">
+                <div class="single-tabs tabs-one">
+                    <ul class="nav nav-justified" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <a aria-controls="tab-one-one" aria-selected="true" class="active" data-bs-toggle="tab"
+                               href="#tab-one-one"
+                               id="tab-one-one-tab" role="tab">CLIENTS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a aria-controls="tab-one-two" aria-selected="false" data-bs-toggle="tab" href="#tab-one-two"
+                               id="tab-one-two-tab" role="tab">PRODUCTS</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                        <div aria-labelledby="tab-one-one-tab" class="tab-pane fade show active" id="tab-one-one"
+                             role="tabpanel">
+                            <div class="tab-text">
+                                <section class="my-5">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-md-8 mx-auto">
+                                                <h3 class="h1 fw-bold mb-3 text-center" th:text="#{admindashboard.userstitle}">
+                                                    Resgistered Users:</h3>
+                                            </div>
+                                            <p class="text-center" th:text="#{admindashboard.usersparagraph}">Registered and
+                                                active users on the website are listed below, you can modify the information as
+                                                required:</p>
+                                        </div>
                                     </div>
-                                    <p class="text-center" th:text="#{admindashboard.usersparagraph}">Registered and
-                                        active users on the website are listed below, you can modify the information as
-                                        required:</p>
-                                </div>
-                            </div>
-                        </section>
-                        <section id="content">
-                            <div class="content-wrap">
-                                <div class="container clearfix">
-                                    <div class="table-responsive">
-                                        <table cellspacing="0" class="table table-striped table-bordered"
-                                               id="datatable1" width="100%">
-                                            <thead>
-                                            <tr>
-                                                <th th:text="#{admindashboard.userstablefirstname}">FirstName</th>
-                                                <th th:text="#{admindashboard.userstablelastname}">LastName</th>
-                                                <th th:text="#{admindashboard.userstableemail}">Email</th>
-                                                <th th:text="#{admindashboard.userstableaction}">Action</th>
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            <th:block th:each="user:${appUsers}">
-                                                <tr>
-                                                    <td th:text="${user.getFirstName}"></td>
-                                                    <td th:text="${user.getLastName}"></td>
-                                                    <td th:text="${user.getEmail}"></td>
-                                                    <td>
-                                                        <div class="btn-group">
-                                                            <button aria-expanded="false"
-                                                                    aria-haspopup="true"
-                                                                    class="btn btn-secondary btn-sm dropdown-toggle"
-                                                                    data-bs-toggle="dropdown"
-                                                                    type="button">
-                                                                Select
-                                                            </button>
-                                                            <div class="dropdown-menu">
-                                                                <a class="dropdown-item"
-                                                                   th:href="@{/modifyUser/{id}(id=${user.getId})}"
-                                                                   th:text="#{admindashboard.userstablemodify}">Modify</a>
-                                                                <a class="dropdown-item"
-                                                                   th:href="@{/deleteUser/{id}(id=${user.getId})}"
-                                                                   th:text="#{admindashboard.userstabledelete}">Delete</a>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                            </th:block>
-                                            </tbody>
-                                        </table>
+                                </section>
+                                <section id="content">
+                                    <div class="content-wrap">
+                                        <div class="container clearfix">
+                                            <div class="table-responsive">
+                                                <table cellspacing="0" class="table table-striped table-bordered"
+                                                       id="datatable1" width="100%">
+                                                    <thead>
+                                                        <tr>
+                                                            <th th:text="#{admindashboard.userstablefirstname}">FirstName</th>
+                                                            <th th:text="#{admindashboard.userstablelastname}">LastName</th>
+                                                            <th th:text="#{admindashboard.userstableemail}">Email</th>
+                                                            <th th:text="#{admindashboard.userstableaction}">Action</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <th:block th:each="user:${appUsers}">
+                                                        <tr>
+                                                            <td th:text="${user.getFirstName}"></td>
+                                                            <td th:text="${user.getLastName}"></td>
+                                                            <td th:text="${user.getEmail}"></td>
+                                                            <td>
+                                                                <div class="btn-group">
+                                                                    <button aria-expanded="false"
+                                                                            aria-haspopup="true"
+                                                                            class="btn btn-secondary btn-sm dropdown-toggle"
+                                                                            data-bs-toggle="dropdown"
+                                                                            type="button">
+                                                                        Select
+                                                                    </button>
+                                                                    <div class="dropdown-menu">
+                                                                        <a class="dropdown-item"
+                                                                           th:href="@{/modifyUser/{id}(id=${user.getId})}"
+                                                                           th:text="#{admindashboard.userstablemodify}">Modify</a>
+                                                                        <a class="dropdown-item"
+                                                                           th:href="@{/deleteUser/{id}(id=${user.getId})}"
+                                                                           th:text="#{admindashboard.userstabledelete}">Delete</a>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </th:block>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
+                                </section>
                             </div>
-                        </section>
+                        </div>
+                        <div aria-labelledby="tab-one-two-tab" class="tab-pane fade" id="tab-one-two" role="tabpanel">
+                            <div class="tab-text">
+                                <section class="my-5">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-md-8 mx-auto">
+                                                <h3 class="h1 fw-bold mb-3 text-center"
+                                                    th:text="#{admindashboard.productstitle}">Active Products</h3>
+                                            </div>
+                                            <p class="text-center" th:text="#{admindashboard.productsparagraph}">You can modify
+                                                any of the plans according to the need of the business:</p>
+                                        </div>
+                                    </div>
+                                </section>
+                                <section id="content">
+                                    <div class="content-wrap">
+                                        <div class="container clearfix">
+                                            <div class="table-responsive">
+                                                <table cellspacing="0" class="table table-striped table-bordered"
+                                                       id="datatable1" width="100%">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Plan</th>
+                                                            <th th:text="#{admindashboard.productstablelevel}">Level</th>
+                                                            <th th:text="#{admindashboard.productstabledescription}">Description
+                                                            </th>
+                                                            <th th:text="#{admindashboard.productstableprice}">Price</th>
+                                                            <th th:text="#{admindashboard.productstableaction}">Action</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <th:block th:each="product:${products}">
+                                                        <tr>
+                                                            <td th:text="${product.getName}"></td>
+                                                            <td th:text="${product.getLevel}"></td>
+                                                            <td th:text="${product.getDescription}"></td>
+                                                            <td th:text="${product.getPrice}"></td>
+                                                        </tr>
+                                                    </th:block>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div aria-labelledby="tab-one-two-tab" class="tab-pane fade" id="tab-one-two" role="tabpanel">
-                    <div class="tab-text">
-                        <section class="my-5">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-md-8 mx-auto">
-                                        <h3 class="h1 fw-bold mb-3 text-center"
-                                            th:text="#{admindashboard.productstitle}">Active Products</h3>
-                                    </div>
-                                    <p class="text-center" th:text="#{admindashboard.productsparagraph}">You can modify
-                                        any of the plans according to the need of the business:</p>
-                                </div>
+            </div>
+            <div class="section-title-two">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="content">
+                                <form method="POST" th:action="@{/logout}" style="display: inline">
+                                    <a href="#" onclick="this.parentNode.submit();"><span>Log Out</span></a>
+                                </form>
                             </div>
-                        </section>
-                        <section id="content">
-                            <div class="content-wrap">
-                                <div class="container clearfix">
-                                    <div class="table-responsive">
-                                        <table cellspacing="0" class="table table-striped table-bordered"
-                                               id="datatable1" width="100%">
-                                            <thead>
-                                            <tr>
-                                                <th>Plan</th>
-                                                <th th:text="#{admindashboard.productstablelevel}">Level</th>
-                                                <th th:text="#{admindashboard.productstabledescription}">Description
-                                                </th>
-                                                <th th:text="#{admindashboard.productstableprice}">Price</th>
-                                                <th th:text="#{admindashboard.productstableaction}">Action</th>
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            <th:block th:each="product:${products}">
-                                                <tr>
-                                                    <td th:text="${product.getName}"></td>
-                                                    <td th:text="${product.getLevel}"></td>
-                                                    <td th:text="${product.getDescription}"></td>
-                                                    <td th:text="${product.getPrice}"></td>
-                                                </tr>
-                                            </th:block>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- tabs one -->
-    </div>
-
-
-</div>
-</body>
+    </body>
 </html>
