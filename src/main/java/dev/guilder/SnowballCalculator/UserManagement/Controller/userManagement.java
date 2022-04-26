@@ -1,7 +1,7 @@
 package dev.guilder.SnowballCalculator.UserManagement.Controller;
 
 import dev.guilder.SnowballCalculator.UserManagement.Entitys.AppUser;
-import dev.guilder.SnowballCalculator.UserManagement.Service.UserServiceImp;
+import dev.guilder.SnowballCalculator.UserManagement.Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class userManagement {
     @Autowired
-    private UserServiceImp userService;
+    private UserService userService;
 
 
     @GetMapping("/userRegistration")
@@ -23,8 +23,12 @@ public class userManagement {
     }
 
     @PostMapping("/userRegistration")
-    public String saveUser(@ModelAttribute AppUser appUser) {
-        userService.saveUser(appUser);
+    public String saveUser(@ModelAttribute AppUser registrationRequest) {
+
+        //Todo: Validate registrationRequest
+
+        userService.saveUser(registrationRequest);
+
         return "redirect:/Home";
     }
 
