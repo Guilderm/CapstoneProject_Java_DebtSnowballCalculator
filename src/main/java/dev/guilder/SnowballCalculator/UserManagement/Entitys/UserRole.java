@@ -1,6 +1,6 @@
 package dev.guilder.SnowballCalculator.UserManagement.Entitys;
 
-public enum AppUserRole {
+public enum UserRole {
     USER,
     ADMIN
 }

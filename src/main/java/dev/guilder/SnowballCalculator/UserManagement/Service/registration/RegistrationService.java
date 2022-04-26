@@ -1,10 +1,10 @@
 package dev.guilder.SnowballCalculator.UserManagement.Service.Registration;
 
-import dev.guilder.SnowballCalculator.UserManagement.Entitys.AppUserRole;
-import dev.guilder.SnowballCalculator.UserManagement.Entitys.AppUsers;
+import dev.guilder.SnowballCalculator.UserManagement.Entitys.AppUser;
+import dev.guilder.SnowballCalculator.UserManagement.Entitys.UserRole;
 import dev.guilder.SnowballCalculator.UserManagement.Entitys.ConfirmationToken;
 import dev.guilder.SnowballCalculator.UserManagement.Repository.newUser;
-import dev.guilder.SnowballCalculator.UserManagement.Service.AppUserService;
+import dev.guilder.SnowballCalculator.UserManagement.Service.UserServiceImp;
 import dev.guilder.SnowballCalculator.Utilities.EMail.EmailSender;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -16,7 +16,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 public class RegistrationService {
 
-    private final AppUserService appUserService;
+    private final UserServiceImp userServiceImp;
     private final EmailValidator emailValidator;
     private final ConfirmationTokenService confirmationTokenService;
     private final EmailSender emailSender;
@@ -29,13 +29,13 @@ public class RegistrationService {
             throw new IllegalStateException("email not valid");
         }
 
-        String token = appUserService.signUpUser(
-                new AppUsers(
+        String token = userServiceImp.signUpUser(
+                new AppUser(
                         request.getFirstName(),
                         request.getLastName(),
                         request.getEmail(),
                         request.getPassword(),
-                        AppUserRole.USER
+                        UserRole.USER
                 )
         );
 
@@ -65,8 +65,8 @@ public class RegistrationService {
         }
 
         confirmationTokenService.setConfirmedAt(token);
-        appUserService.enableAppUser(
-                confirmationToken.getAppUsers().getEmail());
+        userServiceImp.enableAppUser(
+                confirmationToken.getAppUser().getEmail());
         return "confirmed";
     }
 

@@ -1,6 +1,6 @@
 package dev.guilder.SnowballCalculator.UserManagement.Service;
 
-import dev.guilder.SnowballCalculator.UserManagement.Entitys.AppUsers;
+import dev.guilder.SnowballCalculator.UserManagement.Entitys.AppUser;
 import dev.guilder.SnowballCalculator.UserManagement.Entitys.ConfirmationToken;
 import dev.guilder.SnowballCalculator.UserManagement.Repository.AppUserRepository;
 import dev.guilder.SnowballCalculator.UserManagement.Service.Registration.ConfirmationTokenService;
@@ -18,7 +18,7 @@ import java.util.UUID;
 
 @Service
 @AllArgsConstructor
-public class AppUserService implements UserDetailsService, UserService {
+public class UserServiceImp implements UserDetailsService, UserService {
 
     private final static String USER_NOT_FOUND_MSG =
             "user with email %s not found";
@@ -36,9 +36,9 @@ public class AppUserService implements UserDetailsService, UserService {
                                 String.format(USER_NOT_FOUND_MSG, email)));
     }
 
-    public String signUpUser(AppUsers appUsers) {
+    public String signUpUser(AppUser appUser) {
         boolean userExists = appUserRepository
-                .findByEmail(appUsers.getEmail())
+                .findByEmail(appUser.getEmail())
                 .isPresent();
 
         if (userExists) {
@@ -49,11 +49,11 @@ public class AppUserService implements UserDetailsService, UserService {
         }
 
         String encodedPassword = bCryptPasswordEncoder
-                .encode(appUsers.getPassword());
+                .encode(appUser.getPassword());
 
-        appUsers.setPassword(encodedPassword);
+        appUser.setPassword(encodedPassword);
 
-        appUserRepository.save(appUsers);
+        appUserRepository.save(appUser);
 
         String token = UUID.randomUUID().toString();
 
@@ -61,7 +61,7 @@ public class AppUserService implements UserDetailsService, UserService {
                 token,
                 LocalDateTime.now(),
                 LocalDateTime.now().plusMinutes(15),
-                appUsers
+                appUser
         );
 
         confirmationTokenService.saveConfirmationToken(
@@ -78,18 +78,18 @@ public class AppUserService implements UserDetailsService, UserService {
 
     @Override
     @Transactional(readOnly = true)
-    public List<AppUsers> getAllUsers() {
-        return (List<AppUsers>) appUserRepository.findAll();
+    public List<AppUser> getAllUsers() {
+        return (List<AppUser>) appUserRepository.findAll();
     }
 
     @Transactional
-    public void saveUser(AppUsers appUsers) {
-        appUserRepository.save(appUsers);
+    public void saveUser(AppUser appUser) {
+        appUserRepository.save(appUser);
     }
 
     @Override
     @Transactional(readOnly = true)
-    public AppUsers getUserById(long id) {
+    public AppUser getUserById(long id) {
         return appUserRepository.findById(id).orElse(null);
     }
 

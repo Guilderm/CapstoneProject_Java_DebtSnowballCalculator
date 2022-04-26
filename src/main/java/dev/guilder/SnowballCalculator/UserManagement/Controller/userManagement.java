@@ -1,7 +1,7 @@
 package dev.guilder.SnowballCalculator.UserManagement.Controller;
 
-import dev.guilder.SnowballCalculator.UserManagement.Entitys.AppUsers;
-import dev.guilder.SnowballCalculator.UserManagement.Service.AppUserService;
+import dev.guilder.SnowballCalculator.UserManagement.Entitys.AppUser;
+import dev.guilder.SnowballCalculator.UserManagement.Service.UserServiceImp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,31 +13,31 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class userManagement {
     @Autowired
-    private AppUserService appUserService;
+    private UserServiceImp userService;
 
 
     @GetMapping("/userRegistration")
     public String userSignUpPage(Model model) {
-        model.addAttribute("userRegistrationForm", new AppUsers());
+        model.addAttribute("userRegistrationForm", new AppUser());
         return "userManagement/userRegistration";
     }
 
     @PostMapping("/userRegistration")
-    public String saveUser(@ModelAttribute AppUsers appUsers) {
-        appUserService.saveUser(appUsers);
-        return "redirect:/";
+    public String saveUser(@ModelAttribute AppUser appUser) {
+        userService.saveUser(appUser);
+        return "redirect:/Home";
     }
 
     @GetMapping("/deleteUser/{id}")
     public String deleteUser(@PathVariable("id") Long idUser) {
-        appUserService.deleteUser(idUser);
+        userService.deleteUser(idUser);
         return "redirect:/adminDashboard";
     }
 
     @GetMapping("/changeUser/{id}")
     public String changeUser(@PathVariable("id") Long idUser, Model model) {
-        AppUsers appUsers = appUserService.getUserById(idUser);
-        model.addAttribute("alterUser", appUsers);
+        AppUser appUser = userService.getUserById(idUser);
+        model.addAttribute("alterUser", appUser);
         return "userManagement/modifyUserPage";
     }
 

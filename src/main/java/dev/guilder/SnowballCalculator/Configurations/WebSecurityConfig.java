@@ -1,6 +1,6 @@
 package dev.guilder.SnowballCalculator.Configurations;
 
-import dev.guilder.SnowballCalculator.UserManagement.Service.AppUserService;
+import dev.guilder.SnowballCalculator.UserManagement.Service.UserServiceImp;
 import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -16,7 +16,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
-    private final AppUserService appUserService;
+    private final UserServiceImp userServiceImp;
 
     private final BCryptPasswordEncoder bCryptPasswordEncoder;
 
@@ -50,7 +50,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         DaoAuthenticationProvider provider =
                 new DaoAuthenticationProvider();
         provider.setPasswordEncoder(bCryptPasswordEncoder);
-        provider.setUserDetailsService(appUserService);
+        provider.setUserDetailsService(userServiceImp);
         return provider;
     }
 }
