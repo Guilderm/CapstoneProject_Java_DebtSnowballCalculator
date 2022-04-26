@@ -48,7 +48,6 @@ public class userManagement {
     public String changeUser(@PathVariable("id") Long idUser, Model model) {
         AppUser appUser = userService.getUserById(idUser);
         model.addAttribute("alterUser", appUser);
-
         return "userManagement/modifyUserPage";
     }
 
