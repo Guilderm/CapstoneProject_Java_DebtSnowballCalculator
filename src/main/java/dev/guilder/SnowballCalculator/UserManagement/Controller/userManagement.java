@@ -33,7 +33,7 @@ public class userManagement {
 
         userService.registerUser(registrationRequest);
 
-        securityService.autoLogin(registrationRequest.getUsername(), registrationRequest.getPassword());
+        //securityService.autoLogin(registrationRequest.getUsername(), registrationRequest.getPassword());
 
         return "redirect:/Home";
     }

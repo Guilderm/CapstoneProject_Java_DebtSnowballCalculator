@@ -13,6 +13,7 @@ import java.util.Optional;
 @Transactional(readOnly = true)
 public interface AppUserRepository extends CrudRepository<AppUser, Long> {
     Optional<AppUser> findByEmail(String email);
+    //AppUser findByUsername(String username);
 
     @Transactional
     @Modifying
