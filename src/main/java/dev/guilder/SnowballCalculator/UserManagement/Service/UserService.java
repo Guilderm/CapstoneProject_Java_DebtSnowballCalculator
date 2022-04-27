@@ -12,5 +12,6 @@ public interface UserService {
     AppUser getUserById(long id);
 
     void deleteUser(long id);
-    //public User findUserByName(String firstName);
+
+    String confirmToken(String token);
 }

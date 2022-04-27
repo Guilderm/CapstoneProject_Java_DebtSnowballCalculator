@@ -131,6 +131,30 @@ public class UserServiceImp implements UserDetailsService, UserService {
         return token;
     }
 
+    @Transactional
+    public String confirmToken(String token) {
+        ConfirmationToken confirmationToken = confirmationTokenService
+                .getToken(token)
+                .orElseThrow(() ->
+                        new IllegalStateException("Token not found"));
+
+        if (confirmationToken.getConfirmedAt() != null) {
+            throw new IllegalStateException("email already confirmed");
+        }
+
+        LocalDateTime expiredAt = confirmationToken.getExpiresAt();
+
+        if (expiredAt.isBefore(LocalDateTime.now())) {
+            throw new IllegalStateException("token expired");
+        }
+
+        confirmationTokenService.setConfirmedAt(token);
+
+        enableAppUser(confirmationToken.getAppUser().getEmail());
+
+        return "confirmed";
+    }
+
     @Override
     @Transactional(readOnly = true)
     public AppUser getUserById(long id) {
