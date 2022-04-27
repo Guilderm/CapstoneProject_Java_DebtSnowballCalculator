@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class userManagement {
     @Autowired
     private UserService userService;
-    //@Autowired
+   // @Autowired
     private SecurityService securityService;
 
     @GetMapping("/userRegistration")

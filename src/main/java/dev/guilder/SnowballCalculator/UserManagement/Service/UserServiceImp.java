@@ -5,6 +5,8 @@ import dev.guilder.SnowballCalculator.UserManagement.Entitys.ConfirmationToken;
 import dev.guilder.SnowballCalculator.UserManagement.Entitys.UserRole;
 import dev.guilder.SnowballCalculator.UserManagement.Repository.AppUserRepository;
 import dev.guilder.SnowballCalculator.UserManagement.Service.Registration.ConfirmationTokenService;
+import dev.guilder.SnowballCalculator.Utilities.EMail.BuildEmail;
+import dev.guilder.SnowballCalculator.Utilities.EMail.EmailSender;
 import lombok.AllArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -27,6 +29,8 @@ public class UserServiceImp implements UserDetailsService, UserService {
     private final AppUserRepository appUserRepository;
     private final BCryptPasswordEncoder bCryptPasswordEncoder;
     private final ConfirmationTokenService confirmationTokenService;
+
+    private final EmailSender emailSender;
 
     @Override
     public UserDetails loadUserByUsername(String email)
@@ -88,11 +92,43 @@ public class UserServiceImp implements UserDetailsService, UserService {
 
         registrationRequest.setPassword(bCryptPasswordEncoder.encode(registrationRequest.getPassword()));
         registrationRequest.setUserRole(UserRole.USER);
-
-        //Todo: setup a email validation process
         registrationRequest.setEnabled(Boolean.TRUE);
 
+        boolean userExists = appUserRepository
+                .findByEmail(registrationRequest.getEmail())
+                .isPresent();
+
+        if (userExists) {
+            // TODO if email not confirmed send confirmation email.
+            // TODO if email is present give a proper message.
+            throw new IllegalStateException("email already taken");
+        }
+
+        //Todo: setup a email validation process
+
         appUserRepository.save(registrationRequest);
+
+        String link = "http://localhost/api/v1/UserManagement/confirmUser?token=" + GetToken(registrationRequest);
+        emailSender.send(
+                registrationRequest.getEmail(),
+                BuildEmail.buildEmail(registrationRequest.getFirstName(), link));
+    }
+
+    public String GetToken(AppUser registrationRequest) {
+
+        String token = UUID.randomUUID().toString();
+
+        ConfirmationToken confirmationToken = new ConfirmationToken(
+                token,
+                LocalDateTime.now(),
+                LocalDateTime.now().plusWeeks(1),
+                registrationRequest
+        );
+
+        confirmationTokenService.saveConfirmationToken(
+                confirmationToken);
+
+        return token;
     }
 
     @Override

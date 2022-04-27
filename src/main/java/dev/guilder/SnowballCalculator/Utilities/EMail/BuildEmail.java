@@ -1,76 +1,7 @@
-package dev.guilder.SnowballCalculator.UserManagement.Service.Registration;
+package dev.guilder.SnowballCalculator.Utilities.EMail;
 
-import dev.guilder.SnowballCalculator.UserManagement.Entitys.AppUser;
-import dev.guilder.SnowballCalculator.UserManagement.Entitys.ConfirmationToken;
-import dev.guilder.SnowballCalculator.UserManagement.Entitys.UserRole;
-import dev.guilder.SnowballCalculator.UserManagement.Repository.newUser;
-import dev.guilder.SnowballCalculator.UserManagement.Service.UserServiceImp;
-import dev.guilder.SnowballCalculator.Utilities.EMail.EmailSender;
-import lombok.AllArgsConstructor;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-
-import java.time.LocalDateTime;
-
-@Service
-@AllArgsConstructor
-public class RegistrationService {
-
-    private final UserServiceImp userServiceImp;
-    private final EmailValidator emailValidator;
-    private final ConfirmationTokenService confirmationTokenService;
-    private final EmailSender emailSender;
-
-    public String register(newUser request) {
-        boolean isValidEmail = emailValidator.
-                test(request.getEmail());
-
-        if (!isValidEmail) {
-            throw new IllegalStateException("email not valid");
-        }
-
-        String token = userServiceImp.signUpUser(
-                new AppUser(
-                        request.getFirstName(),
-                        request.getLastName(),
-                        request.getEmail(),
-                        request.getPassword(),
-                        UserRole.USER
-                )
-        );
-
-        String link = "http://localhost/api/v1/registration/confirm?token=" + token;
-        emailSender.send(
-                request.getEmail(),
-                buildEmail(request.getFirstName(), link));
-
-        return token;
-    }
-
-    @Transactional
-    public String confirmToken(String token) {
-        ConfirmationToken confirmationToken = confirmationTokenService
-                .getToken(token)
-                .orElseThrow(() ->
-                        new IllegalStateException("Token not found"));
-
-        if (confirmationToken.getConfirmedAt() != null) {
-            throw new IllegalStateException("email already confirmed");
-        }
-
-        LocalDateTime expiredAt = confirmationToken.getExpiresAt();
-
-        if (expiredAt.isBefore(LocalDateTime.now())) {
-            throw new IllegalStateException("token expired");
-        }
-
-        confirmationTokenService.setConfirmedAt(token);
-        userServiceImp.enableAppUser(
-                confirmationToken.getAppUser().getEmail());
-        return "confirmed";
-    }
-
-    private String buildEmail(String name, String link) {
+public class BuildEmail {
+    public static String buildEmail(String name, String link) {
         return "<div style=\"font-family:Helvetica,Arial,sans-serif;font-size:16px;margin:0;color:#0b0c0c\">\n" +
                 "\n" +
                 "<span style=\"display:none;font-size:1px;color:#fff;max-height:0\"></span>\n" +
