@@ -9,14 +9,14 @@
 <div layout:fragment="content">
     <section id="content">
         <div class="content-wrap">
-            <h3 class="h1 fw-bold mb-3 text-center">Confirm your Purchase:</h3>
+            <h3 class="h1 fw-bold mb-3 text-center" th:text="#{shoppingcart.title}">Confirm your Purchase:</h3>
             <div class="container">
                 <table class="table cart mb-5">
                     <thead>
                     <tr>
-                        <th class="cart-product-name">Product</th>
-                        <th class="cart-product-name">Plan Selected</th>
-                        <th class="cart-product-price">Unit Price</th>
+                        <th class="cart-product-name" th:text="#{shoppingcart.tabletitleone}">Product</th>
+                        <th class="cart-product-name" th:text="#{shoppingcart.tabletitletwo}">Plan Selected</th>
+                        <th class="cart-product-price" th:text="#{shoppingcart.tabletitlethree}">Unit Price</th>
                         <th class="cart-product-subtotal">Total</th>
                     </tr>
                     </thead>
@@ -24,7 +24,6 @@
                     <th:block th:each="product:${products}">
                         <tr class="cart_item">
                             <td class="cart-product-name">
-                                <a>Suscrption Plan</a>
                             </td>
                             <td class="cart-product-price" th:text="${product.getName}">
                             </td>
@@ -41,7 +40,7 @@
             <ul class="d-flex flex-wrap mb-4">
                 <li class="me-3 mb-3">
                     <a class="btn icon-right primary-btn" th:href="@{/Checkout}">
-                        Proceed to CheckOut
+                        [[#{shoppingcart.bottom}]]
                         <i class="lni lni-play"></i>
                     </a>
                 </li>

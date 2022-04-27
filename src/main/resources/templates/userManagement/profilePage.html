@@ -19,8 +19,8 @@
                                         alt="" src="/images/blanckuser.jpg"/>
                             </div>
                             <div class="des">
-                                <h5>User</h5>
-                                <p>
+                                <h5 th:text="#{user.title}">User</h5>
+                                <p th:text="#{user.paragraph}">
                                     You can see your personal information and update your data if you wish, in addition
                                     you can also see a status of your current subscriptions:
                                 </p>
@@ -42,14 +42,14 @@
                                     <a aria-controls="email-marketing" aria-selected="true" class="nav-link active"
                                        data-bs-toggle="pill" href="#email-marketing"
                                        id="email-marketing-tab" role="tab">
-                                        <i class="lni lni-envelope"></i> Personal Information
+                                        <i class="lni lni-envelope"></i> [[#{user.personaltitle}]]
                                     </a>
                                 </li>
                                 <li class="nav-item" role="presentation">
                                     <a aria-controls="user-analytics" aria-selected="false" class="nav-link"
                                        data-bs-toggle="pill" href="#user-analytics"
                                        id="user-analytics-tab" role="tab">
-                                        <i class="lni lni-bar-chart"></i> Your Suscriptions
+                                        <i class="lni lni-bar-chart"></i> [[#{user.suscriptiontitle}]]
                                     </a>
                                 </li>
                             </ul>
@@ -64,14 +64,14 @@
                                                 <div class="container">
                                                     <div class="row">
                                                         <div class="section-title mt-45">
-                                                            <h3 class="title text-center">Update Info</h3>
+                                                            <h3 class="title text-center" th:text="#{user.personaltitle}">Update Info</h3>
                                                         </div>
                                                         <div class="contact-form form-style-four mt-15">
                                                             <form action="#">
                                                                 <div class="row">
                                                                     <div class="col-md-6">
                                                                         <div class="form-input mt-15">
-                                                                            <label>First Name</label>
+                                                                            <label th:text="#{user.personalname}">First Name</label>
                                                                             <div class="input-items default">
                                                                                 <i class="lni lni-user"></i>
                                                                                 <input placeholder="First Name"
@@ -81,7 +81,7 @@
                                                                     </div>
                                                                     <div class="col-md-6">
                                                                         <div class="form-input mt-15">
-                                                                            <label>Last Name</label>
+                                                                            <label th:text="#{user.personallastname}">Last Name</label>
                                                                             <div class="input-items default">
                                                                                 <i class="lni lni-user"></i>
                                                                                 <input placeholder="Last Name"
@@ -91,7 +91,7 @@
                                                                     </div>
                                                                     <div class="col-md-6">
                                                                         <div class="form-input mt-15">
-                                                                            <label>Email Address</label>
+                                                                            <label th:text="#{user.personalemail}">Email</label>
                                                                             <div class="input-items default">
                                                                                 <i class="lni lni-envelope"></i>
                                                                                 <input placeholder="admin@uideck.com"
@@ -101,7 +101,7 @@
                                                                     </div>
                                                                     <div class="col-md-6">
                                                                         <div class="form-input mt-15">
-                                                                            <label>Password</label>
+                                                                            <label th:text="#{user.personalpassword}">Password</label>
                                                                             <div class="input-items default">
                                                                                 <i class="lni lni-key"></i>
                                                                                 <input placeholder="********"
@@ -116,7 +116,7 @@
                                                                                         class="btn primary-btn rounded-full"
                                                                                         type="submit"
                                                                                 >
-                                                                                    UPDATE INFO
+                                                                                    [[#{user.bottomupdate}]]
                                                                                 </button>
                                                                             </div>
                                                                         </div>
@@ -143,11 +143,11 @@
                                                         <div class="row">
                                                             <div>
                                                                 <div class="product-details">
-                                                                    <h3 class="product-title">
+                                                                    <h3 class="product-title" th:text="#{user.suscriptiontitle}">
                                                                         Your Finance Plan
                                                                     </h3>
                                                                     <div class="des">
-                                                                        <p>
+                                                                        <p th:text="#{user.suscriptionparagraph}">
                                                                             With your suscription you'll learn to build
                                                                             habits that keep you motivated and on track
                                                                             with your money goals.
@@ -163,9 +163,9 @@
                                                                             />
                                                                             <label class="form-check-label"
                                                                                    for="flexCheckDefault1">
-                                                                                <span class="title">Education</span>
+                                                                                <span class="title" th:text="#{user.suscriptionplantitleone}">Education</span>
                                                                                 <span class="description"
-                                                                                >Learn to better manage your money quickly and easily.</span
+                                                                                th:text="#{user.suscriptionpone}">Learn to better manage your money quickly and easily.</span
                                                                                 >
                                                                                 <span class="price">$19.99</span>
                                                                             </label>
@@ -179,9 +179,9 @@
                                                                             />
                                                                             <label class="form-check-label"
                                                                                    for="flexCheckDefault2">
-                                                                                <span class="title">Encouragement</span>
+                                                                                <span class="title" th:text="#{user.suscriptionplantitletwo}">Encouragement</span>
                                                                                 <span class="description"
-                                                                                >Build momentum with small wins along the way.</span
+                                                                                th:text="#{user.suscriptionptwo}">Build momentum with small wins along the way.</span
                                                                                 >
                                                                                 <span class="price">$59.99</span>
                                                                             </label>
@@ -195,9 +195,9 @@
                                                                             />
                                                                             <label class="form-check-label"
                                                                                    for="flexCheckDefault3">
-                                                                                <span class="title">Empowerment</span>
+                                                                                <span class="title" th:text="#{user.suscriptionplantitlethree}">Empowerment</span>
                                                                                 <span class="description"
-                                                                                >Make financial decisions with confidence in every aspect of your life.</span
+                                                                                th:text="#{user.suscriptionpthree}">Make financial decisions with confidence in every aspect of your life.</span
                                                                                 >
                                                                                 <span class="price">$129.99</span>
                                                                             </label>
