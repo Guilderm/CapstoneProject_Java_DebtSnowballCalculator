@@ -106,10 +106,4 @@ public class UserServiceImp implements UserDetailsService, UserService {
     public void deleteUser(long id) {
         appUserRepository.deleteById(id);
     }
-
-    /*@Override
-    @Transactional (readOnly = true)
-    public User findUserByName(String firstName) {
-        return userRepository.findUserByName(firstName);
-    }*/
 }

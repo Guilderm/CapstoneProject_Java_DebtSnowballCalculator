@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" layout:decorate="~{globalComponents/layout}"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">>
+<head>
+    <link rel="stylesheet" th:href="@{CSS/homePage.css}">
+    <title>[[#{navbar.home}]]</title></head>
+<body class="stretched">
+
+<div layout:fragment="content">
+
+
+    <div class="container">
+        <div sec:authorize="isAuthenticated()">
+            <form id="logoutForm" method="POST" th:action="@{/logout}">
+                <input name="${_csrf.parameterName}" type="hidden" value="${_csrf.token}"/>
+            </form>
+
+            <h2>Welcome <span sec:authentication="name"></span> | <a
+                    onclick="document.forms['logoutForm'].submit()">Logout</a></h2>
+        </div>
+    </div>
+
+    <div class="starter-template">
+        <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]</h1>
+    </div>
+
+    th:inline="text">Welcome [[${#httpServletRequest.remoteUser}]]
+
+    <div sec:authorize="isAuthenticated()">
+        This content is only shown to authenticated users.
+    </div>
+    <div sec:authorize="hasRole('ADMIN')">
+        This content is only shown to administrators.
+    </div>
+    <div sec:authorize="hasRole('USER')">
+        This content is only shown to users.
+    </div>
+
+    User: <span sec:authentication="name"></span>
+    Role(s): <span sec:authentication="principal.authorities"></span>
+
+</div>
+</body>
+</html>
+
