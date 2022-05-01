@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class publicPages {
     @GetMapping({"/", "/Home"})
     public String HomePage(Model model) {
-        return "publicPages/homePageTMP";
+        return "publicPages/homePage";
     }
 
     @GetMapping("/pricing")
