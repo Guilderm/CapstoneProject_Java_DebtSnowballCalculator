@@ -10,22 +10,10 @@
 <div layout:fragment="content">
 
 
-    <div class="container">
-        <div sec:authorize="isAuthenticated()">
-            <form id="logoutForm" method="POST" th:action="@{/logout}">
-                <input name="${_csrf.parameterName}" type="hidden" value="${_csrf.token}"/>
-            </form>
-
-            <h2>Welcome <span sec:authentication="name"></span> | <a
-                    onclick="document.forms['logoutForm'].submit()">Logout</a></h2>
-        </div>
+    <div sec:authorize="isAuthenticated()">
+        Welcome <span sec:authentication="name"></span>
+        authorities <span sec:authentication="authorities"></span>
     </div>
-
-    <div class="starter-template">
-        <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]</h1>
-    </div>
-
-    th:inline="text">Welcome [[${#httpServletRequest.remoteUser}]]
 
     <div sec:authorize="isAuthenticated()">
         This content is only shown to authenticated users.
@@ -37,8 +25,12 @@
         This content is only shown to users.
     </div>
 
-    User: <span sec:authentication="name"></span>
-    Role(s): <span sec:authentication="principal.authorities"></span>
+    <sec:authorize access="!isAuthenticated()">
+        Login
+    </sec:authorize>
+    <sec:authorize access="isAuthenticated()">
+        Logout
+    </sec:authorize>
 
 </div>
 </body>
